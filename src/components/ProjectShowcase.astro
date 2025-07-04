@@ -1,83 +1,84 @@
 ---
 import { Icon } from "astro-icon/components";
 
-// 项目配置 - 重点展示AI AGENTS
+// 项目配置 - 我的开源项目
 const projects = [
 	{
-		title: "开源项目",
-		icon: "mdi:github",
-		description: "个人开发的开源项目，涵盖Web应用、工具库等，持续维护更新。",
-		featured: true, // 标记为重点项目
-		links: [
-			{
-				name: "GitHub",
-				url: "https://github.com/zouzonghao",
-				description: "开源代码仓库"
-			},
-			{
-				name: "项目文档",
-				url: "https://docs.example.com",
-				description: "项目说明和使用指南"
-			}
-		]
+		title: "SafeDEL",
+		icon: "mdi:delete-variant",
+		description: "安全删除工具，防止意外删除重要文件",
+		url: "https://github.com/lixibi/SafeDEL"
 	},
 	{
-		title: "技术平台",
-		icon: "mdi:server-network",
-		description: "负责运营的技术平台，提供AI服务和开发工具，服务开发者社区。",
-		featured: false,
-		links: [
-			{
-				name: "WenjianQun.com",
-				url: "https://wenjianqun.com",
-				description: "文件群管理助手"
-			},
-			{
-				name: "AiPageGen.com",
-				url: "https://aipagegen.com",
-				description: "AI智能设计工具"
-			}
-		]
+		title: "CloudPaste",
+		icon: "mdi:cloud-upload",
+		description: "云端剪贴板同步工具，多设备间快速共享文本",
+		url: "https://github.com/lixibi/CloudPaste"
+	},
+	{
+		title: "Browser-Use",
+		icon: "mdi:web",
+		description: "浏览器自动化客户端，提升网页操作效率",
+		url: "https://github.com/lixibi/browser-use"
+	},
+	{
+		title: "English Phrase Cards",
+		icon: "mdi:cards-variant",
+		description: "英语短语卡片学习工具，轻松记忆常用表达",
+		url: "https://github.com/lixibi/english-phrase-cards"
+	},
+	{
+		title: "Prose Polish",
+		icon: "mdi:format-text",
+		description: "文本优化工具，提升写作质量和表达效果",
+		url: "https://github.com/lixibi/prose-polish"
+	},
+	{
+		title: "Blog Astro",
+		icon: "mdi:newspaper-variant",
+		description: "基于Astro的现代化博客主题，简洁高效",
+		url: "https://github.com/lixibi/blog-astro"
 	}
 ];
 ---
 
 <section class="mb-8">
 	<!-- 项目标题 - 简洁风格 -->
+	<h2 class="title mb-6 text-xl text-accent">开源项目</h2>
 
-
-	<div class="space-y-6">
+	<!-- 项目网格布局 - 宽屏优化：更灵活的列数 -->
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
 		{projects.map((project) => (
 			<!-- 项目卡片 - 默认暗色，悬停变亮 -->
-			<div class="hanbayu-project-card p-6">
-				<!-- 分类标题 -->
-				<div class="mb-4 flex items-center gap-2">
-					<Icon name={project.icon} class="h-5 w-5 text-accent" />
-					<h3 class="text-lg font-semibold text-accent-2">{project.title}</h3>
+			<div class="hanbayu-card p-4 group transition-transform hover:scale-105">
+				<!-- 项目图标 -->
+				<div class="mb-3 flex justify-center">
+					<div class="rounded-full bg-bg-muted border border-border-subtle p-3 shadow-sm">
+						<Icon name={project.icon} class="h-6 w-6 text-accent" />
+					</div>
 				</div>
 
-				<!-- 项目描述 -->
-				<p class="mb-4 text-textColor leading-relaxed">{project.description}</p>
+				<!-- 项目标题 -->
+				<h3 class="text-base font-semibold text-accent-2 mb-2 text-center">
+					{project.title}
+				</h3>
 
-				<!-- 项目链接 - 宽屏优化：更多列数 -->
-				<div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-					{project.links.map((link) => (
-						<div class="hanbayu-card-small group p-3">
-							<div class="flex-1">
-								<a
-									href={link.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hanbayu-link-hover font-medium group-hover:underline"
-								>
-									{link.name}
-								</a>
-								{link.description && (
-									<p class="text-sm text-text-muted mt-1">{link.description}</p>
-								)}
-							</div>
-						</div>
-					))}
+				<!-- 项目描述 -->
+				<p class="text-sm text-text-muted mb-3 text-center leading-relaxed">
+					{project.description}
+				</p>
+
+				<!-- 项目链接 -->
+				<div class="text-center">
+					<a
+						href={project.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="hanbayu-link-hover text-sm hover:underline inline-flex items-center"
+					>
+						查看项目
+						<Icon name="mdi:external-link" class="ml-1 h-3 w-3" />
+					</a>
 				</div>
 			</div>
 		))}

@@ -24,7 +24,6 @@ import rehypeUnwrapImages from "rehype-unwrap-images";
 import rehypeKatex from "rehype-katex"; // Render LaTeX with KaTeX
 
 
-import decapCmsOauth from "astro-decap-cms-oauth";
 
 // https://astro.build/config
 export default defineConfig({
@@ -77,7 +76,7 @@ export default defineConfig({
             insertThemeColorMeta: false,
             insertManifestLink: false,
         },
-		}), decapCmsOauth()],
+		})],
     markdown: {
         rehypePlugins: [
             [
@@ -122,9 +121,6 @@ export default defineConfig({
             WEBMENTION_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
             WEBMENTION_URL: envField.string({ context: "client", access: "public", optional: true }),
             WEBMENTION_PINGBACK: envField.string({ context: "client", access: "public", optional: true }),
-            OAUTH_GITHUB_CLIENT_ID: envField.string({ context: "server", access: "secret", optional: true }),
-            OAUTH_GITHUB_CLIENT_SECRET: envField.string({ context: "server", access: "secret", optional: true }),
-            OAUTH_GITHUB_REPO_ID: envField.string({ context: "server", access: "secret", optional: true }),
         },
     },
 });

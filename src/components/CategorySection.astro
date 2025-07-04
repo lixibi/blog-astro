@@ -36,10 +36,10 @@ const tagCategories = [
 	}
 ];
 
-// 按标签分组文章
+// 按标签分组文章 - 使用案例不敏感匹配
 function getPostsByTag(tag: string) {
 	return posts.filter(post =>
-		post.data.tags.includes(tag) ||
+		post.data.tags.some(postTag => postTag.toLowerCase() === tag.toLowerCase()) ||
 		(post.data.category === "技术类" && tag === "技术文章") ||
 		(post.data.category === "生活类" && tag === "生活随笔") ||
 		(post.data.category === "学习类" && tag === "学习笔记") ||

@@ -14,7 +14,9 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 	const uniqueTags = getUniqueTags(sortedPosts);
 
 	return uniqueTags.flatMap((tag) => {
-		const filterPosts = sortedPosts.filter((post) => post.data.tags.includes(tag));
+		const filterPosts = sortedPosts.filter((post) => 
+			post.data.tags.some(postTag => postTag.toLowerCase() === tag.toLowerCase())
+		);
 		return paginate(filterPosts, {
 			pageSize: 10,
 			params: { tag },
