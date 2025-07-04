@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/admin/"
+    }
+  ],
   "functions": {
     "src/pages/**/*.astro": {
       "memory": 1024,
