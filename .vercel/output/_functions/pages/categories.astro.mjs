@@ -1,7 +1,7 @@
 import { c as createAstro, a as createComponent } from '../chunks/astro/server_UGElL9ja.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Astro = createAstro("https://demo.343700.xyz/");
+const $$Astro = createAstro("https://blog.lixining.com/");
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;

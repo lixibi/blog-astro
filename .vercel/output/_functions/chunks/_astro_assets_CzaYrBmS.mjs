@@ -1219,7 +1219,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      './sharp_Drc4V5qY.mjs'
+      './sharp_CHelKs_S.mjs'
     ).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -1382,7 +1382,7 @@ function applyResponsiveAttributes({
   return attributes;
 }
 
-const $$Astro$1 = createAstro("https://demo.343700.xyz/");
+const $$Astro$1 = createAstro("https://blog.lixining.com/");
 const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Image;
@@ -1860,7 +1860,7 @@ function lookup(extn) {
 	return mimes[!~idx ? tmp : tmp.substring(++idx)];
 }
 
-const $$Astro = createAstro("https://demo.343700.xyz/");
+const $$Astro = createAstro("https://blog.lixining.com/");
 const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Picture;

@@ -142,7 +142,7 @@ function validateEnvVariable(value, options) {
   return selectValidator(options)(value);
 }
 
-const schema = {"WEBMENTION_API_KEY":{"context":"server","access":"secret","type":"string","optional":true},"WEBMENTION_URL":{"context":"client","access":"public","type":"string","optional":true},"WEBMENTION_PINGBACK":{"context":"client","access":"public","type":"string","optional":true},"OAUTH_GITHUB_CLIENT_ID":{"context":"server","access":"secret","type":"string"},"OAUTH_GITHUB_CLIENT_SECRET":{"context":"server","access":"secret","type":"string"},"PUBLIC_DECAP_CMS_SRC_URL":{"context":"client","access":"public","optional":true,"default":"","type":"string"},"PUBLIC_DECAP_CMS_VERSION":{"context":"client","access":"public","optional":true,"default":"3.3.3","type":"string"},"OAUTH_GITHUB_REPO_ID":{"context":"server","access":"secret","optional":true,"default":"","type":"string"}};
+const schema = {"WEBMENTION_API_KEY":{"context":"server","access":"secret","type":"string","optional":true},"WEBMENTION_URL":{"context":"client","access":"public","type":"string","optional":true},"WEBMENTION_PINGBACK":{"context":"client","access":"public","type":"string","optional":true},"OAUTH_GITHUB_CLIENT_ID":{"context":"server","access":"secret","type":"string","optional":true},"OAUTH_GITHUB_CLIENT_SECRET":{"context":"server","access":"secret","type":"string","optional":true},"OAUTH_GITHUB_REPO_ID":{"context":"server","access":"secret","type":"string","optional":true,"default":""},"PUBLIC_DECAP_CMS_SRC_URL":{"context":"client","access":"public","optional":true,"default":"","type":"string"},"PUBLIC_DECAP_CMS_VERSION":{"context":"client","access":"public","optional":true,"default":"3.3.3","type":"string"}};
 
 // @ts-check
 

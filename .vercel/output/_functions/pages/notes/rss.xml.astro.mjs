@@ -1,4 +1,4 @@
-import { g as getCollection } from '../../chunks/_astro_content_Qv4172ie.mjs';
+import { g as getCollection } from '../../chunks/_astro_content_DsgoCfvF.mjs';
 import { s as siteConfig } from '../../chunks/site.config_CJwNCQXJ.mjs';
 import rss from '@astrojs/rss';
 export { renderers } from '../../renderers.mjs';
@@ -8,7 +8,7 @@ const GET = async () => {
   return rss({
     title: siteConfig.title,
     description: siteConfig.description,
-    site: "https://demo.343700.xyz/",
+    site: "https://blog.lixining.com/",
     items: notes.map((note) => ({
       title: note.data.title,
       pubDate: note.data.publishDate,

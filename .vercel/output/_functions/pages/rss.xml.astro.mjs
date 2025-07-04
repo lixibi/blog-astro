@@ -1,4 +1,4 @@
-import { a as getAllPosts } from '../chunks/post_B8LO7299.mjs';
+import { a as getAllPosts } from '../chunks/post_C8xWLjwz.mjs';
 import { s as siteConfig } from '../chunks/site.config_CJwNCQXJ.mjs';
 import rss from '@astrojs/rss';
 export { renderers } from '../renderers.mjs';
@@ -8,7 +8,7 @@ const GET = async () => {
   return rss({
     title: siteConfig.title,
     description: siteConfig.description,
-    site: "https://demo.343700.xyz/",
+    site: "https://blog.lixining.com/",
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
