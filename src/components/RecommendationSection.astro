@@ -13,7 +13,51 @@ try {
 	recommendations = [];
 }
 
-// 精选推荐示例数据
+// 获取读书笔记文章
+let bookPosts: CollectionEntry<"post">[] = [];
+try {
+	const allPosts = await getCollection("post");
+	// 筛选带有"读书"标签的文章，按发布日期排序，取最新的6篇
+	bookPosts = allPosts
+		.filter(post => post.data.tags.includes("读书"))
+		.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
+		.slice(0, 6);
+} catch (error) {
+	console.log("No book posts found:", error);
+	bookPosts = [];
+}
+
+// 将读书笔记转换为推荐格式
+const bookRecommendations = bookPosts.map(post => {
+	// 从标题中提取书名（去掉"读书笔记"等后缀）
+	const bookTitle = post.data.title
+		.replace(/读书笔记.*$/, '')
+		.replace(/：.*$/, '')
+		.replace(/—.*$/, '')
+		.trim();
+
+	// 从描述中提取核心内容作为推荐理由
+	const description = post.data.description.length > 80
+		? post.data.description.substring(0, 80) + "..."
+		: post.data.description;
+
+	// 生成个人笔记摘要
+	const note = `${new Date(post.data.publishDate).getFullYear()}年读完，深有感触`;
+
+	return {
+		title: bookTitle,
+		type: "book" as const,
+		author: "", // 从文章内容中可能无法直接获取作者信息
+		rating: 9, // 默认评分，表示推荐
+		description: description,
+		tags: post.data.tags.filter(tag => tag !== "读书" && tag !== "笔记"),
+		note: note,
+		id: post.id,
+		url: `/posts/${post.id}/` // 添加链接到原文章
+	};
+});
+
+// 精选推荐示例数据（作为补充）
 const sampleRecommendations = [
 	{
 		title: "《代码大全》",
@@ -22,7 +66,8 @@ const sampleRecommendations = [
 		rating: 9,
 		description: "软件开发的经典之作，全面覆盖软件构建的各个方面，是每个程序员必读的经典。",
 		tags: ["编程", "软件工程", "技术"],
-		note: "深入浅出，实用性强"
+		note: "深入浅出，实用性强",
+		url: undefined // 示例数据没有链接
 	},
 	{
 		title: "《黑客帝国》",
@@ -31,25 +76,8 @@ const sampleRecommendations = [
 		rating: 8,
 		description: "经典科幻电影，探讨现实与虚拟的边界，引发对人工智能和现实本质的思考。",
 		tags: ["科幻", "哲学", "AI"],
-		note: "视觉震撼，思想深刻"
-	},
-	{
-		title: "《三体》",
-		type: "book",
-		author: "刘慈欣",
-		rating: 9,
-		description: "中国科幻文学的巅峰之作，宏大的宇宙观和深刻的人性思考。",
-		tags: ["科幻", "文学", "宇宙"],
-		note: "想象力惊人，格局宏大"
-	},
-	{
-		title: "《千与千寻》",
-		type: "movie",
-		author: "宫崎骏",
-		rating: 9,
-		description: "宫崎骏的经典动画电影，充满想象力的奇幻世界和成长故事。",
-		tags: ["动画", "奇幻", "成长"],
-		note: "温暖治愈，想象力丰富"
+		note: "视觉震撼，思想深刻",
+		url: undefined // 示例数据没有链接
 	}
 ];
 
@@ -85,29 +113,43 @@ const typeConfig = {
 	}
 };
 
-// 使用实际数据或示例数据
-const displayRecommendations = recommendations.length > 0
-	? recommendations.map((rec: any) => ({
+// 合并推荐数据：优先使用读书笔记，然后是推荐集合，最后是示例数据
+let displayRecommendations = [];
+
+if (bookRecommendations.length > 0) {
+	// 使用读书笔记数据
+	displayRecommendations = bookRecommendations;
+} else if (recommendations.length > 0) {
+	// 使用推荐集合数据
+	displayRecommendations = recommendations.map((rec: any) => ({
 		title: rec.data.title,
 		type: rec.data.type,
 		author: rec.data.author,
 		rating: rec.data.rating,
 		description: rec.data.description,
 		tags: rec.data.tags,
-		note: rec.data.note || "", // 添加note字段
-		id: rec.id
-	}))
-	: sampleRecommendations;
+		note: rec.data.note || "",
+		id: rec.id,
+		url: undefined // 推荐集合数据没有链接
+	}));
+} else {
+	// 使用示例数据作为后备
+	displayRecommendations = sampleRecommendations;
+}
+
+// 限制显示数量为6个
+displayRecommendations = displayRecommendations.slice(0, 6);
 ---
 
 <section class="mb-8">
 	<!-- 精选推荐标题 - 简洁风格 -->
-	<h2 class="title mb-6 text-xl text-accent">精选推荐</h2>
+	<h2 class="title mb-6 text-xl text-accent">书影推荐</h2>
 
 	<!-- 增强层次的网格布局 - 宽屏优化：更多推荐展示 -->
 	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 		{displayRecommendations.map((item) => {
 			const config = typeConfig[item.type as keyof typeof typeConfig];
+			const isBookPost = item.url; // 判断是否为读书笔记文章
 
 			return (
 				<div class="hanbayu-card group p-4">
@@ -123,9 +165,17 @@ const displayRecommendations = recommendations.length > 0
 							<span class={`text-xs ${config.color} bg-bg-muted border border-border-subtle px-2 py-1 rounded-full`}>
 								{config.label}
 							</span>
-							<h3 class="mt-2 font-semibold text-accent-2 text-sm line-clamp-2">
-								{item.title}
-							</h3>
+							{isBookPost ? (
+								<a href={item.url} class="hanbayu-link">
+									<h3 class="mt-2 font-semibold text-accent-2 text-sm line-clamp-2 hover:text-accent transition-colors">
+										{item.title}
+									</h3>
+								</a>
+							) : (
+								<h3 class="mt-2 font-semibold text-accent-2 text-sm line-clamp-2">
+									{item.title}
+								</h3>
+							)}
 						</div>
 
 						<!-- 作者/导演 -->
@@ -167,6 +217,15 @@ const displayRecommendations = recommendations.length > 0
 										{tag}
 									</span>
 								))}
+							</div>
+						)}
+
+						<!-- 读书笔记链接提示 -->
+						{isBookPost && (
+							<div class="mt-2 text-center">
+								<a href={item.url} class="text-xs text-link hover:text-accent transition-colors">
+									阅读完整笔记 →
+								</a>
 							</div>
 						)}
 					</div>
