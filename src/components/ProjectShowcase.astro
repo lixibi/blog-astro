@@ -1,0 +1,74 @@
+---
+
+// 项目配置 - 重点展示AI AGENTS
+const projects = [
+	{
+		description: "个人开发的开源项目，涵盖Web应用、工具库等，持续维护更新。",
+		featured: true, // 标记为重点项目
+		links: [
+			{
+				name: "GitHub",
+				url: "https://github.com/zouzonghao",
+				description: "开源代码仓库"
+			},
+			{
+				name: "项目文档",
+				url: "https://docs.example.com",
+				description: "项目说明和使用指南"
+			}
+		]
+	},
+	{
+		description: "负责运营的技术平台，提供AI服务和开发工具，服务开发者社区。",
+		featured: false,
+		links: [
+			{
+				name: "WenjianQun.com",
+				url: "https://wenjianqun.com",
+				description: "文件群管理助手"
+			},
+			{
+				name: "AiPageGen.com",
+				url: "https://aipagegen.com",
+				description: "AI智能设计工具"
+			}
+		]
+	}
+];
+---
+
+<section class="mb-8">
+	<!-- 项目标题 - 简洁风格 -->
+	<h2 class="title mb-6 text-xl text-accent">项目</h2>
+
+	<div class="space-y-6">
+		{projects.map((project) => (
+			<!-- 项目卡片 - 默认暗色，悬停变亮 -->
+			<div class="hanbayu-project-card p-6">
+				<!-- 项目描述 -->
+				<p class="mb-4 text-textColor leading-relaxed">{project.description}</p>
+
+				<!-- 项目链接 -->
+				<div class="grid gap-3 sm:grid-cols-2">
+					{project.links.map((link) => (
+						<div class="hanbayu-card-small group p-3">
+							<div class="flex-1">
+								<a
+									href={link.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="hanbayu-link-hover font-medium group-hover:underline"
+								>
+									{link.name}
+								</a>
+								{link.description && (
+									<p class="text-sm text-text-muted mt-1">{link.description}</p>
+								)}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		))}
+	</div>
+</section>

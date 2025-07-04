@@ -23,6 +23,8 @@ const post = defineCollection({
 			draft: z.boolean().default(false),
 			ogImage: z.string().optional(),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			// 文章分类字段 - 保留用于向后兼容，推荐使用tags
+			category: z.enum(["技术类", "生活类", "学习类", "游戏类"]).optional(),
 			publishDate: z
 				.string()
 				.or(z.date())
@@ -64,4 +66,24 @@ const note = defineCollection({
 	}),
 });
 
-export const collections = { post, note };
+// 书影推荐集合
+const recommendation = defineCollection({
+	loader: glob({ base: "./src/content/recommendation", pattern: "**/*.{md,mdx}" }),
+	schema: ({ image }) =>
+		baseSchema.extend({
+			description: z.string(),
+			type: z.enum(["book", "movie", "tv", "documentary"]), // 类型：书籍、电影、电视剧、纪录片
+			author: z.string().optional(), // 作者/导演
+			year: z.number().optional(), // 出版年份/上映年份
+			rating: z.number().min(1).max(10).optional(), // 个人评分 1-10
+			cover: z.string().optional(), // 封面图片
+			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			publishDate: z
+				.string()
+				.or(z.date())
+				.transform((val) => new Date(val)),
+			status: z.enum(["reading", "finished", "wishlist"]).default("finished"), // 状态：在读/在看、已完成、想读/想看
+		}),
+});
+
+export const collections = { post, note, recommendation };

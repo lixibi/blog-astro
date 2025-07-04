@@ -1,36 +1,115 @@
 ---
 import { getAllPosts, getUniqueTagsWithCount } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
+import { Icon } from "astro-icon/components";
 
 const allPosts = await getAllPosts();
 const allTags = getUniqueTagsWithCount(allPosts);
 export const prerender = true;
 
 const meta = {
-	description: "A list of all the topics I've written about in my posts",
-	title: "All Tags",
+	description: "浏览所有文章标签，支持搜索和筛选",
+	title: "文章标签",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6">全部标签</h1>
-	<ul class="flex flex-wrap gap-4">
-		{
-			// allTags.map(([tag, val]) => (
-			allTags.map(([tag, _]) => (
-				<li class="flex items-center gap-x-2">
-					<a
-						class="tx-lg cactus-link inline-block text-base"
-						data-astro-prefetch
-						href={`/tags/${tag}/`}
-						title={`View posts with the tag: ${tag}`}
-					>
-						&#35;{tag}
-					</a>
-					{/* 修改：隐藏标签博客数 */}
-					{/* <span class="inline-block">- {val}篇</span> */}
-				</li>
-			))
-		}
-	</ul>
+	<div class="mb-8">
+		<h1 class="title mb-4 flex items-center gap-3">
+			<Icon name="mdi:tag-multiple" class="h-8 w-8 text-accent" />
+			文章标签
+		</h1>
+		<p class="text-text-muted">
+			共 {allTags.length} 个标签，{allPosts.length} 篇文章
+		</p>
+	</div>
+
+	<!-- 搜索框 -->
+	<div class="mb-8">
+		<div class="relative">
+			<Icon
+				name="mdi:magnify"
+				class="text-text-muted absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2"
+			/>
+			<input
+				type="text"
+				placeholder="搜索标签..."
+				class="border-border-subtle bg-bg-elevated text-text w-full rounded-lg border px-10 py-3 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+				id="tag-search"
+			/>
+		</div>
+	</div>
+
+	<!-- 标签列表 -->
+	<div id="tags-container">
+		<ul class="flex flex-wrap gap-3" id="tags-list">
+			{
+				allTags.map(([tag, count]) => (
+					<li class="tag-item" data-tag={tag.toLowerCase()}>
+						<a
+							class="hanbayu-card inline-flex items-center gap-2 px-4 py-2 text-sm transition-all hover:scale-105"
+							data-astro-prefetch
+							href={`/tags/${tag}/`}
+							title={`查看 ${tag} 相关的 ${count} 篇文章`}
+						>
+							<span class="text-accent">&#35;</span>
+							<span>{tag}</span>
+							<span class="text-text-muted text-xs">({count})</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+
+		<!-- 无结果提示 -->
+		<div id="no-results" class="hidden py-12 text-center">
+			<Icon name="mdi:tag-off" class="text-text-muted mx-auto mb-4 h-16 w-16" />
+			<p class="text-text-muted">没有找到匹配的标签</p>
+		</div>
+	</div>
 </PageLayout>
+
+<script>
+	// 标签搜索功能
+	const searchInput = document.getElementById("tag-search") as HTMLInputElement;
+	const tagsList = document.getElementById("tags-list") as HTMLUListElement;
+	const noResults = document.getElementById("no-results") as HTMLDivElement;
+	const tagItems = document.querySelectorAll(".tag-item") as NodeListOf<HTMLLIElement>;
+
+	function filterTags(searchTerm: string) {
+		const term = searchTerm.toLowerCase().trim();
+		let visibleCount = 0;
+
+		tagItems.forEach((item) => {
+			const tagName = item.getAttribute("data-tag") || "";
+			const isVisible = tagName.includes(term) || term === "";
+
+			item.style.display = isVisible ? "block" : "none";
+			if (isVisible) visibleCount++;
+		});
+
+		// 显示/隐藏无结果提示
+		if (visibleCount === 0 && term !== "") {
+			tagsList.style.display = "none";
+			noResults.style.display = "block";
+		} else {
+			tagsList.style.display = "flex";
+			noResults.style.display = "none";
+		}
+	}
+
+	// 搜索事件监听
+	searchInput?.addEventListener("input", (e) => {
+		const target = e.target as HTMLInputElement;
+		filterTags(target.value);
+	});
+
+	// 支持键盘导航
+	searchInput?.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") {
+			searchInput.value = "";
+			filterTags("");
+			searchInput.blur();
+		}
+	});
+</script>

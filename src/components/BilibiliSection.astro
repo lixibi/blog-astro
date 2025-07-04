@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+
+// 新媒体平台信息
+const mediaInfo = [
+	{
+		name: "B站",
+		channelName: "B站主页",
+		description: "技术分享、生活感悟",
+		channelUrl: "https://space.bilibili.com/lixining",
+		icon: "mdi:video",
+		buttonText: "观看视频",
+	},
+	{
+		name: "微信视频号",
+		channelName: "喜碧星球视频号",
+		description: "短视频内容、日常分享",
+		channelUrl: "https://channels.weixin.qq.com/your-channel",
+		icon: "mdi:wechat",
+		buttonText: "关注视频号",
+	},
+];
+---
+
+<section class="mb-8">
+	<!-- 新媒体标题 - 简洁风格 -->
+	<h2 class="title mb-6 text-xl text-accent">新媒体</h2>
+
+	<!-- 两个平台的卡片 - 应用统一悬停效果 -->
+	<div class="grid gap-6 sm:grid-cols-2">
+		{mediaInfo.map((platform) => (
+			<div class="hanbayu-card p-6">
+				<!-- 平台信息 -->
+				<div class="text-center">
+					<!-- 平台图标 -->
+					<div class="mb-4 flex justify-center">
+						<div
+							class="flex h-16 w-16 items-center justify-center rounded-full border border-border-subtle bg-bg-muted shadow-sm"
+						>
+							<Icon name={platform.icon} class="h-8 w-8 text-link" />
+						</div>
+					</div>
+
+					<!-- 平台信息 -->
+					<div class="mb-4">
+						<h3 class="mb-1 text-lg font-semibold text-accent-2">{platform.channelName}</h3>
+						<p class="mb-2 text-sm text-text-muted">{platform.name}</p>
+						<p class="text-textColor">{platform.description}</p>
+					</div>
+
+					<!-- 访问按钮 -->
+					<a
+						href={platform.channelUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="hanbayu-button inline-flex items-center"
+					>
+						<Icon name="mdi:play-circle" class="mr-2 h-4 w-4" />
+						{platform.buttonText}
+						<Icon name="mdi:arrow-right" class="ml-2 h-4 w-4" />
+					</a>
+				</div>
+			</div>
+		))}
+	</div>
+</section>

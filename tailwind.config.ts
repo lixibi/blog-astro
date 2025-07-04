@@ -22,7 +22,7 @@ export default {
 		require("@tailwindcss/typography"),
 		plugin(({ addComponents }) => {
 			addComponents({
-				".cactus-link": {
+				".hanbayu-link": {
 					"&:hover": {
 						"@apply decoration-link decoration-2": {},
 					},
@@ -31,18 +31,67 @@ export default {
 				".title": {
 					"@apply text-2xl font-semibold text-accent-2": {},
 				},
+				// 统一悬停效果组件类
+				".hanbayu-card": {
+					"@apply rounded-xl border border-border-subtle bg-bg-elevated shadow-sm": {},
+					"@apply transition-all duration-300 ease-out": {},
+					"&:hover": {
+						"@apply shadow-md bg-bg-subtle border-border": {},
+					},
+				},
+				".hanbayu-card-small": {
+					"@apply rounded-lg border border-border-subtle bg-bg-muted shadow-sm": {},
+					"@apply transition-all duration-200 ease-out": {},
+					"&:hover": {
+						"@apply shadow-sm bg-bg-elevated border-border": {},
+					},
+				},
+				".hanbayu-link-hover": {
+					"@apply text-link transition-colors duration-200 ease-out": {},
+					"&:hover": {
+						"@apply text-accent": {},
+					},
+				},
+				".hanbayu-button": {
+					"@apply rounded-lg bg-bg-muted border border-border-subtle px-4 py-2": {},
+					"@apply font-medium text-link transition-all duration-200 ease-out": {},
+					"&:hover": {
+						"@apply bg-bg-subtle border-border text-accent shadow-sm": {},
+					},
+				},
+				// 项目卡片专用 - 默认暗色，无悬停效果
+				".hanbayu-project-card": {
+					"@apply rounded-xl border border-border-subtle bg-bg-subtle shadow-sm": {},
+				},
 			});
 		}),
 	],
 	theme: {
 		extend: {
       	colors: {
+				// 强调色系统
 				accent: "hsl(var(--theme-accent) / <alpha-value>)",
 				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
+				"accent-soft": "hsl(var(--theme-accent-soft) / <alpha-value>)",
+
+				// 背景色层次
 				bgColor: "hsl(var(--theme-bg) / <alpha-value>)",
-				link: "hsl(var(--theme-link) / <alpha-value>)",
-				quote: "hsl(var(--theme-quote) / <alpha-value>)",
+				"bg-elevated": "hsl(var(--theme-bg-elevated) / <alpha-value>)",
+				"bg-subtle": "hsl(var(--theme-bg-subtle) / <alpha-value>)",
+				"bg-muted": "hsl(var(--theme-bg-muted) / <alpha-value>)",
+
+				// 文本色层次
 				textColor: "hsl(var(--theme-text) / <alpha-value>)",
+				"text-muted": "hsl(var(--theme-text-muted) / <alpha-value>)",
+				link: "hsl(var(--theme-link) / <alpha-value>)",
+
+				// 边框色层次
+				border: "hsl(var(--theme-border) / <alpha-value>)",
+				"border-subtle": "hsl(var(--theme-border-subtle) / <alpha-value>)",
+
+				// 功能色彩
+				quote: "hsl(var(--theme-quote) / <alpha-value>)",
+				shadow: "hsl(var(--theme-shadow) / <alpha-value>)",
 			},
 			fontFamily: {
 				// Add any custom fonts here
@@ -58,7 +107,7 @@ export default {
 				DEFAULT: {
 					css: {
 						a: {
-							"@apply cactus-link": "",
+							"@apply hanbayu-link": "",
 						},
 						blockquote: {
 							borderLeftWidth: "0",
@@ -190,9 +239,50 @@ export default {
 						"--tw-prose-code": theme("colors.textColor / 1"),
 						"--tw-prose-headings": theme("colors.accent-2 / 1"),
 						"--tw-prose-hr": "0.5px dashed #666",
-						"--tw-prose-links": theme("colors.textColor / 1"),
+						"--tw-prose-links": theme("colors.link / 1"),
 						"--tw-prose-quotes": theme("colors.quote / 1"),
 						"--tw-prose-th-borders": "#666",
+						// 优化标题间距
+						"h1, h2, h3, h4, h5, h6": {
+							fontFamily: "'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif",
+							marginTop: "1.5em",
+							marginBottom: "0.5em",
+						},
+						// 优化段落间距
+						"p": {
+							marginTop: "1em",
+							marginBottom: "1em",
+							lineHeight: "1.7",
+						},
+						// 优化列表样式
+						"ul, ol": {
+							marginTop: "1em",
+							marginBottom: "1em",
+						},
+						"li": {
+							marginTop: "0.5em",
+							marginBottom: "0.5em",
+						},
+						// 优化代码块样式
+						"pre": {
+							backgroundColor: "hsl(var(--theme-bg))",
+							border: "1px solid hsl(var(--theme-link) / 0.2)",
+							borderRadius: "6px",
+							fontSize: "0.875rem",
+							lineHeight: "1.5",
+						},
+						"code": {
+							backgroundColor: "hsl(var(--theme-link) / 0.1)",
+							border: "1px solid hsl(var(--theme-link) / 0.2)",
+							borderRadius: "3px",
+							fontSize: "0.875rem",
+							fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+						},
+						"pre code": {
+							backgroundColor: "transparent",
+							border: "none",
+							borderRadius: "0",
+						},
 					},
 				},
 				sm: {

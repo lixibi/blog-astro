@@ -1,0 +1,143 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base.astro";
+import { Icon } from "astro-icon/components";
+export const prerender = true;
+
+// 获取推荐内容
+let recommendations: CollectionEntry<"recommendation">[] = [];
+try {
+	recommendations = await getCollection("recommendation");
+} catch (error) {
+	console.log("No recommendations collection found");
+}
+
+// 按类型分组
+const groupedByType = recommendations.reduce((acc, rec) => {
+	const type = rec.data.type;
+	if (!acc[type]) {
+		acc[type] = [];
+	}
+	acc[type].push(rec);
+	return acc;
+}, {} as Record<string, CollectionEntry<"recommendation">[]>);
+
+// 类型配置
+const typeConfig = {
+	book: {
+		icon: "mdi:book",
+		label: "书籍推荐",
+		color: "text-blue-600 dark:text-blue-400",
+		bgColor: "bg-blue-50 dark:bg-blue-900/20"
+	},
+	movie: {
+		icon: "mdi:movie",
+		label: "电影推荐",
+		color: "text-red-600 dark:text-red-400",
+		bgColor: "bg-red-50 dark:bg-red-900/20"
+	},
+	tv: {
+		icon: "mdi:television",
+		label: "剧集推荐",
+		color: "text-green-600 dark:text-green-400",
+		bgColor: "bg-green-50 dark:bg-green-900/20"
+	},
+	documentary: {
+		icon: "mdi:video",
+		label: "纪录片推荐",
+		color: "text-purple-600 dark:text-purple-400",
+		bgColor: "bg-purple-50 dark:bg-purple-900/20"
+	}
+};
+
+const meta = {
+	description: "书籍、电影、剧集推荐",
+	title: "书影推荐",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6 flex items-center gap-3">
+		<Icon name="mdi:star" class="h-8 w-8 text-accent" />
+		书影推荐
+	</h1>
+	
+	{recommendations.length === 0 ? (
+		<div class="rounded-lg border border-gray-200 bg-gray-50 p-12 text-center dark:border-gray-700 dark:bg-gray-800/50">
+			<Icon name="mdi:book-open-variant" class="mx-auto h-16 w-16 text-gray-400" />
+			<h2 class="mt-4 text-lg font-semibold text-gray-600 dark:text-gray-400">暂无推荐内容</h2>
+			<p class="mt-2 text-gray-500 dark:text-gray-500">
+				推荐内容正在整理中，敬请期待...
+			</p>
+		</div>
+	) : (
+		<div class="space-y-8">
+			{Object.entries(typeConfig).map(([type, config]) => {
+				const items = groupedByType[type] || [];
+				
+				if (items.length === 0) return null;
+				
+				return (
+					<section class={`rounded-lg border border-gray-200 p-6 ${config.bgColor} dark:border-gray-700`}>
+						<h2 class={`mb-6 flex items-center text-xl font-semibold ${config.color}`}>
+							<Icon name={config.icon} class="mr-2 h-6 w-6" />
+							{config.label}
+							<span class="ml-2 text-sm font-normal text-gray-500">
+								({items.length}个)
+							</span>
+						</h2>
+						
+						<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+							{items.map((item) => (
+								<div class="rounded-lg bg-white p-4 shadow-sm dark:bg-gray-800/50">
+									<!-- 封面占位符 -->
+									<div class="mb-4 aspect-[3/4] overflow-hidden rounded-md bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700">
+										<div class="flex h-full items-center justify-center">
+											<Icon name={config.icon} class={`h-12 w-12 text-gray-400 ${config.color}`} />
+										</div>
+									</div>
+									
+									<!-- 内容信息 -->
+									<div class="space-y-2">
+										<h3 class="font-semibold text-gray-900 dark:text-gray-100">
+											{item.data.title}
+										</h3>
+										
+										{item.data.author && (
+											<p class="text-sm text-gray-600 dark:text-gray-400">
+												{item.data.author}
+											</p>
+										)}
+										
+										{item.data.rating && (
+											<div class="flex items-center space-x-1">
+												<Icon name="mdi:star" class="h-4 w-4 text-yellow-500" />
+												<span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+													{item.data.rating}/10
+												</span>
+											</div>
+										)}
+										
+										<p class="text-sm text-gray-600 dark:text-gray-400">
+											{item.data.description}
+										</p>
+										
+										{item.data.tags && item.data.tags.length > 0 && (
+											<div class="flex flex-wrap gap-1">
+												{item.data.tags.map((tag) => (
+													<span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400">
+														{tag}
+													</span>
+												))}
+											</div>
+										)}
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
+				);
+			})}
+		</div>
+	)}
+</PageLayout>

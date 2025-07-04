@@ -1,0 +1,222 @@
+---
+import Search from "@/components/Search.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { menuLinks } from "@/site.config";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	showPersonalInfo?: boolean;
+}
+
+const { showPersonalInfo = false } = Astro.props;
+
+// 个人信息配置
+const personalInfo = {
+	name: "李希宁/喜碧",
+	location: "现居中国桂林市",
+	profession: "全栈程序员",
+	description: "",
+	github: "https://github.com/lixibi",
+	email: "mailto:lixining@lixining.com",
+	bilibili: "https://space.bilibili.com/your-uid",
+	weibo: "https://weibo.com/lixining",
+	twitter: "https://twitter.com/lixining",
+	linuxdo: "https://linux.do/u/lixining",
+};
+---
+
+<!-- 汉白玉主题合并头部组件 -->
+<header class="group relative mb-16" id="main-header">
+	<!-- 导航栏部分 - 仅在非首页显示 -->
+	{!showPersonalInfo && (
+		<div class="mb-8 flex items-center sm:ps-[4.5rem]">
+		<div class="flex sm:flex-col">
+			<a
+				aria-current={Astro.url.pathname === "/" ? "page" : false}
+				class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
+				href="/"
+			>
+				<svg
+					aria-hidden="true"
+					class="me-3 h-10 w-6 sm:absolute sm:start-[-4.5rem] sm:me-0 sm:h-20 sm:w-12"
+					fill="none"
+					focusable="false"
+					viewBox="0 0 272 480"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					
+					
+				</svg>
+				
+			</a>
+			<nav
+				aria-label="Main menu"
+				class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-textColor shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-textColor/20 sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
+				id="navigation-menu"
+			>
+				{
+					menuLinks.map((link) => (
+						<a
+							aria-current={Astro.url.pathname === link.path ? "page" : false}
+							class="px-4 py-4 transition-colors hover:text-accent sm:py-0"
+							data-astro-prefetch
+							href={link.path}
+						>
+							{link.title}
+						</a>
+					))
+				}
+			</nav>
+		</div>
+		<Search />
+		<ThemeToggle />
+		<mobile-button>
+			<button
+				aria-expanded="false"
+				aria-haspopup="menu"
+				aria-label="Open main menu"
+				class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
+				id="toggle-navigation-menu"
+				type="button"
+			>
+				<svg
+					aria-hidden="true"
+					class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
+					fill="none"
+					focusable="false"
+					id="line-svg"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
+					></path>
+				</svg>
+				<svg
+					aria-hidden="true"
+					class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+					fill="none"
+					focusable="false"
+					id="cross-svg"
+					stroke="currentColor"
+					stroke-width="1.5"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+			</button>
+		</mobile-button>
+	</div>
+	)}
+
+	<!-- 个人介绍部分 - 仅在首页显示 -->
+	{showPersonalInfo && (
+		<div
+			class="rounded-lg border border-textColor/10 bg-bgColor p-6 shadow-sm transition-all duration-200 hover:border-textColor/20 hover:shadow-md"
+		>
+			<div class="text-center sm:text-left">
+				<h1 class="text-2xl font-bold text-accent-2">{personalInfo.name}</h1>
+				<p class="mt-1 text-textColor/70">{personalInfo.location}</p>
+				<p class="mt-2 text-lg font-semibold text-textColor">{personalInfo.profession}</p>
+				<p class="mt-2 text-sm text-textColor/80">{personalInfo.description}</p>
+
+				<!-- 哲学思考 -->
+				<div class="mt-4 space-y-3 border-t border-textColor/5 pt-4 sm:space-y-4 sm:pt-5">
+					<!-- 经典引言 -->
+					<blockquote class="text-center philosophical-quote">
+						<p class="text-base font-medium text-textColor/90 italic leading-relaxed sm:text-lg md:text-xl">
+							"道生一，一生二，二生三，三生万物。"
+						</p>
+						<cite class="mt-2 text-sm text-textColor/60 sm:text-base">— 老子《道德经》</cite>
+					</blockquote>
+
+					<!-- 个人思考 -->
+					<div class="rounded-lg bg-textColor/3 p-3 premium-font sm:p-4 md:p-5">
+						<p class="text-sm leading-relaxed text-textColor/75 sm:text-base sm:leading-7 md:text-lg md:leading-8" style="text-indent: 2em;">
+							当代码可以自我纠错、自我迭代、自我繁衍，它就不再是人类思想的延伸，而是另一种正在萌发的智慧。我们这些曾经的'造物主'，不过是它学会思考之前，最后的脚手架。
+						</p>
+					</div>
+				</div>
+
+				<!-- 社交链接 -->
+				<div class="mt-4 flex justify-center space-x-4 sm:justify-start">
+					<a
+						href={personalInfo.github}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label="GitHub"
+					>
+						<Icon name="mdi:github" class="h-5 w-5" />
+					</a>
+					<a
+						href={personalInfo.email}
+						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label="Email"
+					>
+						<Icon name="mdi:email" class="h-5 w-5" />
+					</a>
+					<a
+						href={personalInfo.bilibili}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label="Bilibili"
+					>
+						<Icon name="mdi:video" class="h-5 w-5" />
+					</a>
+					<a
+						href={personalInfo.weibo}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label="微博"
+					>
+						<Icon name="mdi:sina-weibo" class="h-5 w-5" />
+					</a>
+					<a
+						href={personalInfo.twitter}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label="X (Twitter)"
+					>
+						<Icon name="mdi:twitter" class="h-5 w-5" />
+					</a>
+					<a
+						href={personalInfo.linuxdo}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label="Linux.do"
+					>
+						<Icon name="mdi:forum" class="h-5 w-5" />
+					</a>
+				</div>
+			</div>
+		</div>
+	)}
+</header>
+
+<script>
+	import { toggleClass } from "@/utils/domElement";
+
+	class MobileNavBtn extends HTMLElement {
+		#menuOpen: boolean = false;
+
+		connectedCallback() {
+			const headerEl = document.getElementById("main-header")!;
+			const mobileButtonEl = this.querySelector<HTMLButtonElement>("button");
+
+			mobileButtonEl?.addEventListener("click", () => {
+				if (headerEl) toggleClass(headerEl, "menu-open");
+				this.#menuOpen = !this.#menuOpen;
+				mobileButtonEl.setAttribute("aria-expanded", this.#menuOpen.toString());
+			});
+		}
+	}
+
+	customElements.define("mobile-button", MobileNavBtn);
+</script>

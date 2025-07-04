@@ -6,6 +6,7 @@ coverImage:
   src: "./cover.png"
   alt: "封面图"
 tags: ["示例"]
+category: "技术类"
 ogImage: "/social-card.avif"
 ---
 

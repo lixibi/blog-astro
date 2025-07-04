@@ -1,0 +1,93 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	posts: CollectionEntry<"post">[];
+}
+
+const { posts } = Astro.props;
+
+// 主要标签分类配置 - 基于标签系统
+const tagCategories = [
+	{
+		tag: "技术",
+		icon: "mdi:code-tags",
+		color: "text-link",
+		description: "编程技术、开发经验分享"
+	},
+	{
+		tag: "AI",
+		icon: "mdi:robot",
+		color: "text-link",
+		description: "AI智能体创作与应用实践"
+	},
+	{
+		tag: "生活",
+		icon: "mdi:heart",
+		color: "text-link",
+		description: "日常生活感悟与思考"
+	},
+	{
+		tag: "笔记",
+		icon: "mdi:book-open-page-variant",
+		color: "text-link",
+		description: "学习过程中的记录与总结"
+	}
+];
+
+// 按标签分组文章
+function getPostsByTag(tag: string) {
+	return posts.filter(post =>
+		post.data.tags.includes(tag) ||
+		(post.data.category === "技术类" && tag === "技术文章") ||
+		(post.data.category === "生活类" && tag === "生活随笔") ||
+		(post.data.category === "学习类" && tag === "学习笔记") ||
+		(post.data.category === "游戏类" && tag === "娱乐影音游戏")
+	);
+}
+---
+
+<section class="mb-8">
+	<!-- 文章分类标题 - 简洁风格 -->
+	<h2 class="title mb-6 text-xl text-accent">文章分类</h2>
+
+	<!-- 增强层次的网格布局 -->
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+		{tagCategories.map((category) => {
+			const categoryPosts = getPostsByTag(category.tag);
+			const postCount = categoryPosts.length;
+
+			return (
+				<div class="hanbayu-card p-4">
+					<!-- 分类标题 -->
+					<div class="mb-3 text-center">
+						<div class="mb-2 flex justify-center">
+							<div class="rounded-full bg-bg-muted border border-border-subtle p-3 shadow-sm">
+								<Icon name={category.icon} class={`h-6 w-6 ${category.color}`} />
+							</div>
+						</div>
+						<h3 class="text-base font-semibold text-accent-2 mb-1">
+							{category.tag}
+						</h3>
+						<p class="text-xs text-text-muted mb-2">{category.description}</p>
+						<span class="text-xs text-text-muted">
+							{postCount}篇文章
+						</span>
+					</div>
+
+					<!-- 查看全部提示 - 改为标签路由 -->
+					<div class="mt-3 text-center">
+						<a
+							href={`/tags/${encodeURIComponent(category.tag)}/`}
+							class="hanbayu-link-hover text-xs hover:underline inline-flex items-center"
+						>
+							查看全部
+							<Icon name="mdi:arrow-right" class="ml-1 h-3 w-3" />
+						</a>
+					</div>
+				</div>
+			);
+		})}
+	</div>
+</section>

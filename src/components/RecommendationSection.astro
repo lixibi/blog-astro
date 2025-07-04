@@ -1,0 +1,188 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+// 获取推荐内容（如果有的话）
+let recommendations: CollectionEntry<"recommendation">[] = [];
+try {
+	const allRecommendations = await getCollection("recommendation");
+	recommendations = allRecommendations.slice(0, 6); // 只显示前6个
+} catch (error) {
+	// 如果没有推荐内容，使用示例数据
+	console.log("No recommendations found, using sample data:", error);
+	recommendations = [];
+}
+
+// 精选推荐示例数据
+const sampleRecommendations = [
+	{
+		title: "《代码大全》",
+		type: "book",
+		author: "史蒂夫·迈克康奈尔",
+		rating: 9,
+		description: "软件开发的经典之作，全面覆盖软件构建的各个方面，是每个程序员必读的经典。",
+		tags: ["编程", "软件工程", "技术"],
+		note: "深入浅出，实用性强"
+	},
+	{
+		title: "《黑客帝国》",
+		type: "movie",
+		author: "沃卓斯基姐妹",
+		rating: 8,
+		description: "经典科幻电影，探讨现实与虚拟的边界，引发对人工智能和现实本质的思考。",
+		tags: ["科幻", "哲学", "AI"],
+		note: "视觉震撼，思想深刻"
+	},
+	{
+		title: "《三体》",
+		type: "book",
+		author: "刘慈欣",
+		rating: 9,
+		description: "中国科幻文学的巅峰之作，宏大的宇宙观和深刻的人性思考。",
+		tags: ["科幻", "文学", "宇宙"],
+		note: "想象力惊人，格局宏大"
+	},
+	{
+		title: "《千与千寻》",
+		type: "movie",
+		author: "宫崎骏",
+		rating: 9,
+		description: "宫崎骏的经典动画电影，充满想象力的奇幻世界和成长故事。",
+		tags: ["动画", "奇幻", "成长"],
+		note: "温暖治愈，想象力丰富"
+	}
+];
+
+// 类型配置 - 汉白玉主题增强层次配色
+const typeConfig = {
+	book: {
+		icon: "mdi:book",
+		label: "书籍",
+		color: "text-link",
+		bgColor: "bg-bg-elevated",
+		borderColor: "border-border-subtle"
+	},
+	movie: {
+		icon: "mdi:movie",
+		label: "电影",
+		color: "text-link",
+		bgColor: "bg-bg-elevated",
+		borderColor: "border-border-subtle"
+	},
+	tv: {
+		icon: "mdi:television",
+		label: "剧集",
+		color: "text-link",
+		bgColor: "bg-bg-elevated",
+		borderColor: "border-border-subtle"
+	},
+	documentary: {
+		icon: "mdi:video",
+		label: "纪录片",
+		color: "text-link",
+		bgColor: "bg-bg-elevated",
+		borderColor: "border-border-subtle"
+	}
+};
+
+// 使用实际数据或示例数据
+const displayRecommendations = recommendations.length > 0
+	? recommendations.map((rec: any) => ({
+		title: rec.data.title,
+		type: rec.data.type,
+		author: rec.data.author,
+		rating: rec.data.rating,
+		description: rec.data.description,
+		tags: rec.data.tags,
+		note: rec.data.note || "", // 添加note字段
+		id: rec.id
+	}))
+	: sampleRecommendations;
+---
+
+<section class="mb-8">
+	<!-- 精选推荐标题 - 简洁风格 -->
+	<h2 class="title mb-6 text-xl text-accent">精选推荐</h2>
+
+	<!-- 增强层次的网格布局 -->
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+		{displayRecommendations.map((item) => {
+			const config = typeConfig[item.type as keyof typeof typeConfig];
+
+			return (
+				<div class="hanbayu-card group p-4">
+					<!-- 增强的封面区域 -->
+					<div class="hanbayu-card-small mb-3 flex items-center justify-center p-4">
+						<Icon name={config.icon} class={`h-8 w-8 ${config.color}`} />
+					</div>
+
+					<!-- 内容信息 -->
+					<div class="space-y-2">
+						<!-- 标题和类型 -->
+						<div class="text-center">
+							<span class={`text-xs ${config.color} bg-bg-muted border border-border-subtle px-2 py-1 rounded-full`}>
+								{config.label}
+							</span>
+							<h3 class="mt-2 font-semibold text-accent-2 text-sm line-clamp-2">
+								{item.title}
+							</h3>
+						</div>
+
+						<!-- 作者/导演 -->
+						{item.author && (
+							<p class="text-xs text-text-muted text-center">
+								{item.author}
+							</p>
+						)}
+
+						<!-- 评分 -->
+						{item.rating && (
+							<div class="flex items-center justify-center space-x-1">
+								<Icon name="mdi:star" class="h-3 w-3 text-link" />
+								<span class="text-xs font-medium text-text-muted">
+									{item.rating}/10
+								</span>
+							</div>
+						)}
+
+						<!-- 描述 -->
+						<p class="line-clamp-2 text-xs text-textColor text-center">
+							{item.description}
+						</p>
+
+						<!-- 读书笔记/观后感 -->
+						{item.note && (
+							<div class="mt-2 rounded-lg bg-bg-muted border border-border-subtle p-2">
+								<p class="text-xs text-text-muted italic text-center">
+									"{item.note}"
+								</p>
+							</div>
+						)}
+
+						<!-- 标签 -->
+						{item.tags && item.tags.length > 0 && (
+							<div class="flex flex-wrap gap-1 justify-center">
+								{item.tags.slice(0, 2).map((tag: string) => (
+									<span class="rounded-full bg-bg-muted border border-border-subtle px-2 py-1 text-xs text-text-muted">
+										{tag}
+									</span>
+								))}
+							</div>
+						)}
+					</div>
+				</div>
+			);
+		})}
+	</div>
+
+	<!-- 查看更多 -->
+	<div class="mt-6 text-center">
+		<a
+			href="/recommendations/"
+			class="hanbayu-link-hover inline-flex items-center"
+		>
+			查看更多推荐
+			<Icon name="mdi:arrow-right" class="ml-1 h-4 w-4" />
+		</a>
+	</div>
+</section>

@@ -1,0 +1,76 @@
+---
+import { Icon } from "astro-icon/components";
+
+// 个人信息配置
+const personalInfo = {
+	name: "李希宁",
+	location: "现居中国桂林市",
+	profession: "程序员",
+	avatar: "/avatar.jpg", // 你可以将头像放在 public 目录下
+	github: "https://github.com/zouzonghao",
+	email: "mailto:your-email@example.com",
+	bilibili: "https://space.bilibili.com/your-uid",
+};
+---
+
+<!-- 汉白玉主题个人卡片 -->
+<div
+	class="mb-8 rounded-lg border border-accent/20 bg-bgColor p-6 shadow-sm transition-all duration-200 hover:border-accent/30 hover:shadow-md"
+>
+	<div class="flex flex-col items-center space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0">
+		<!-- 头像 -->
+		<div class="flex-shrink-0">
+			<div
+				class="h-24 w-24 overflow-hidden rounded-full bg-gradient-to-br from-accent/20 to-accent/40 ring-2 ring-accent/20"
+			>
+				<!-- 如果有头像图片，使用图片；否则显示首字母 -->
+				<div class="flex h-full w-full items-center justify-center text-2xl font-bold text-accent">
+					{personalInfo.name.charAt(0)}
+				</div>
+				<!-- 取消注释下面的代码来使用头像图片 -->
+				<!-- <img
+					src={personalInfo.avatar}
+					alt={personalInfo.name}
+					class="h-full w-full object-cover"
+				/> -->
+			</div>
+		</div>
+
+		<!-- 个人信息 -->
+		<div class="flex-1 text-center sm:text-left">
+			<h2 class="text-2xl font-bold text-accent-2">{personalInfo.name}</h2>
+			<p class="mt-1 text-textColor/70">{personalInfo.location}</p>
+			<p class="mt-2 text-lg font-semibold text-accent">{personalInfo.profession}</p>
+			<p class="mt-2 text-sm text-textColor/80">{personalInfo.description}</p>
+
+			<!-- 社交链接 -->
+			<div class="mt-4 flex justify-center space-x-4 sm:justify-start">
+				<a
+					href={personalInfo.github}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="rounded-full bg-accent/10 p-2 text-accent transition-colors hover:bg-accent/20 hover:text-accent-2"
+					aria-label="GitHub"
+				>
+					<Icon name="mdi:github" class="h-5 w-5" />
+				</a>
+				<a
+					href={personalInfo.email}
+					class="rounded-full bg-accent/10 p-2 text-accent transition-colors hover:bg-accent/20 hover:text-accent-2"
+					aria-label="Email"
+				>
+					<Icon name="mdi:email" class="h-5 w-5" />
+				</a>
+				<a
+					href={personalInfo.bilibili}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="rounded-full bg-accent/10 p-2 text-accent transition-colors hover:bg-accent/20 hover:text-accent-2"
+					aria-label="Bilibili"
+				>
+					<Icon name="mdi:video" class="h-5 w-5" />
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

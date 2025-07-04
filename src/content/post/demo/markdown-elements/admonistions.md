@@ -3,6 +3,7 @@ title: "示例2 Markdown 提示框"
 description: "本文展示了在仙人掌中使用 Markdown 提示框功能"
 publishDate: "1998-07-29"
 tags: ["示例"]
+category: "技术类"
 ogImage: "/social-card.avif"
 ---
 

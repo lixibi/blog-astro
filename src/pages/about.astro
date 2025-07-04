@@ -4,31 +4,117 @@ import SocialList from "@/components/SocialList.astro";
 export const prerender = true;
 
 const meta = {
-	description: "仙人掌主题",
-	// 修改：关于
+	description: "关于李希宁的个人博客 - 技术分享、AI探索、生活感悟与学习笔记",
 	title: "关于",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-8">关于</h1>
+	<h1 class="title mb-8">关于这里</h1>
 
 	<div class="prose prose-sm prose-cactus max-w-none">
-		<p>
-			随笔是一种自由的写作形式，它不受严格的格式和结构的限制，而是以轻松、随意的方式记录生活中的点滴。无论是对日常琐事的感悟，还是对某个瞬间的思考，随笔都能帮助我们捕捉那些容易被遗忘的瞬间。
-		</p>
-		<p>
-			在这里，你可以找到我对生活的观察、对世界的思考，以及对未来的期待。每一篇随笔都是一次心灵的旅程，记录着我在某个时刻的所思所感。
-		</p>
-		<p>
-			札记是一种系统化的记录方式，它帮助我们将学习到的知识、阅读的书籍、观看的电影等内容进行整理和总结。通过札记，我们可以更好地理解所学的内容，并将其转化为自己的知识储备。
-		</p>
-		<p>
-			在这个页面中，你会看到我对书籍、文章、电影等的摘录和思考。每一篇札记都是一次知识的积累，记录着我在学习过程中的收获与感悟。
-		</p>
-		<p>
-			随笔与札记，一个记录生活，一个记录知识。它们是我与世界对话的方式，也是我与自己对话的桥梁。希望这些文字能够带给你一些启发，或者至少让你感受到一丝共鸣。
-		</p>
+		<!-- 个人介绍 -->
+		<div class="hanbayu-card mb-8 p-6">
+			<h2 class="mb-4 text-xl font-semibold text-accent-2">李希宁 / 喜碧的博客</h2>
+			<p style="text-indent: 2em;" class="text-text-muted mb-4 leading-relaxed">
+				这里是我的个人空间，一个记录思考、分享经验、探索未知的地方。我相信技术与人文的融合能够创造更美好的世界。
+			</p>
+		</div>
+
+		<!-- 内容分类介绍 -->
+		<h2 class="mb-6 text-xl font-semibold text-accent-2">内容分类</h2>
+
+		<div class="mb-8 grid gap-6 sm:grid-cols-2">
+			<!-- 技术分享 -->
+			<div class="hanbayu-card p-5">
+				<div class="mb-3 flex items-center gap-3">
+					<div class="bg-bg-muted rounded-full p-2">
+						<svg class="h-5 w-5 text-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-accent-2">技术分享</h3>
+				</div>
+				<p class="text-text-muted text-sm leading-relaxed" style="text-indent: 2em;">
+					编程技术、开发经验的记录与分享。从代码实现到架构设计，从问题解决到最佳实践，记录我在技术路上的探索与思考。
+				</p>
+			</div>
+
+			<!-- AI探索 -->
+			<div class="hanbayu-card p-5">
+				<div class="mb-3 flex items-center gap-3">
+					<div class="bg-bg-muted rounded-full p-2">
+						<svg class="h-5 w-5 text-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-accent-2">AI探索</h3>
+				</div>
+				<p class="text-text-muted text-sm leading-relaxed" style="text-indent: 2em;">
+					AI智能体创作与应用实践。探索人工智能的边界，思考技术与人文的交融，记录在AI时代的观察与实验。
+				</p>
+			</div>
+
+			<!-- 生活感悟 -->
+			<div class="hanbayu-card p-5">
+				<div class="mb-3 flex items-center gap-3">
+					<div class="bg-bg-muted rounded-full p-2">
+						<svg class="h-5 w-5 text-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-accent-2">生活感悟</h3>
+				</div>
+				<p class="text-text-muted text-sm leading-relaxed" style="text-indent: 2em;">
+					日常生活中的感悟与思考。记录那些平凡却珍贵的瞬间，分享对生活、对世界、对人生的理解与感悟。
+				</p>
+			</div>
+
+			<!-- 学习笔记 -->
+			<div class="hanbayu-card p-5">
+				<div class="mb-3 flex items-center gap-3">
+					<div class="bg-bg-muted rounded-full p-2">
+						<svg class="h-5 w-5 text-link" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+							></path>
+						</svg>
+					</div>
+					<h3 class="font-semibold text-accent-2">学习笔记</h3>
+				</div>
+				<p class="text-text-muted text-sm leading-relaxed" style="text-indent: 2em;">
+					学习过程中的记录与总结。从书籍阅读到课程学习，从知识整理到思维导图，记录成长路上的每一步足迹。
+				</p>
+			</div>
+		</div>
+
+		<!-- 写作理念 -->
+		<div class="hanbayu-card p-6">
+			<h2 class="mb-4 text-xl font-semibold text-accent-2">写作理念</h2>
+			<p style="text-indent: 2em;" class="text-text-muted mb-4 leading-relaxed">
+				我相信每一次思考都值得被记录，每一个瞬间都蕴含着独特的价值。无论是技术探索中的突破，还是生活感悟中的顿悟，都是我与世界对话的方式。
+			</p>
+			<p style="text-indent: 2em;" class="text-text-muted leading-relaxed">
+				希望这些文字能够带给你一些启发，或者至少让你感受到一丝共鸣。在这个快速变化的时代，让我们一起保持思考，保持好奇，保持对美好事物的向往。
+			</p>
+		</div>
 	</div>
 	<div>
 		<SocialList />

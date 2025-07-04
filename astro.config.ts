@@ -47,7 +47,7 @@ export default defineConfig({
         /**
          * optional
          **/
-        short_name: "仙人掌主题",
+        short_name: "李希宁的博客",
         description: siteConfig.description,
         lang: siteConfig.lang,
         icon: "public/icon.svg", // the source for generating favicon & icons
@@ -122,6 +122,8 @@ export default defineConfig({
             WEBMENTION_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
             WEBMENTION_URL: envField.string({ context: "client", access: "public", optional: true }),
             WEBMENTION_PINGBACK: envField.string({ context: "client", access: "public", optional: true }),
+            OAUTH_GITHUB_CLIENT_ID: envField.string({ context: "server", access: "secret" }),
+            OAUTH_GITHUB_CLIENT_SECRET: envField.string({ context: "server", access: "secret" }),
         },
     },
 });

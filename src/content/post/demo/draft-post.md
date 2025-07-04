@@ -3,6 +3,7 @@ title: "示例4 草稿"
 description: "This post is for testing the draft post functionality"
 publishDate: "1998-07-27"
 tags: ["示例"]
+category: "技术类"
 draft: true
 ogImage: "/social-card.avif"
 ---

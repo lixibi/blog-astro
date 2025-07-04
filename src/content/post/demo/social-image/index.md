@@ -3,6 +3,7 @@ title: "示例5 社交图片卡片"
 publishDate: "1998-07-26"
 description: "详细说明如何在 frontmatter 中添加自定义社交图片卡片"
 tags: ["示例"]
+category: "技术类"
 ogImage: "/social-card.avif"
 ---
 

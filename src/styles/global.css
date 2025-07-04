@@ -2,26 +2,325 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+========================
+汉白玉 (Han-bai-yu) Theme
+========================
+Theme inspired by the pristine white marble used in classical Chinese
+architecture. The colors capture the subtle variations in white jade,
+from pure snow-white to warm cream tones, reflecting the material's
+natural elegance and cultural significance.
+*/
+
 @layer base {
+
 	:root,
 	:root[data-theme="light"] {
 		color-scheme: light;
-		/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
-		--theme-bg: 0deg 0% 98%;
-		--theme-link: 172deg 18% 41%;
-		--theme-text: 203deg 11% 15%;
-		--theme-accent: 351deg 66% 48%;
-		--theme-accent-2: 0deg 0% 7%;
-		--theme-quote: 351deg 66% 48%;
+		/* 汉白玉主题 - 浅色模式 - 增强层次系统 */
+
+		/* 基础背景层次 */
+		--theme-bg: 48deg 25% 97%;
+		/* 主背景：汉白玉白 #F7F6F2 */
+		--theme-bg-elevated: 0deg 0% 100%;
+		/* 提升层：纯白 #FFFFFF */
+		--theme-bg-subtle: 45deg 15% 95%;
+		/* 微妙层：更浅的汉白玉 #F5F4F0 */
+		--theme-bg-muted: 40deg 10% 92%;
+		/* 柔和层：中性汉白玉 #EBEAE6 */
+
+		/* 文本和链接层次 */
+		--theme-text: 30deg 6% 17%;
+		/* 主文本：深石灰 #2B2926 */
+		--theme-text-muted: 30deg 7% 45%;
+		/* 次要文本：中等石灰 #6B6862 */
+		--theme-link: 30deg 7% 58%;
+		/* 链接色：精致大理石灰 #9A958E */
+
+		/* 强调色系统 */
+		--theme-accent: 345deg 65% 47%;
+		/* 主强调：重点红色 #cb2a42 */
+		--theme-accent-2: 30deg 6% 17%;
+		/* 次要强调：深石灰 #2B2926 */
+		--theme-accent-soft: 345deg 30% 85%;
+		/* 柔和强调：浅红色 #E8C5CE */
+
+		/* 边框和分割线层次 */
+		--theme-border: 35deg 8% 85%;
+		/* 主边框：浅石色 #D8D6D2 */
+		--theme-border-subtle: 40deg 12% 90%;
+		/* 微妙边框：极浅石色 #E5E4E0 */
+
+		/* 功能色彩 */
+		--theme-quote: 30deg 7% 58%;
+		/* 引用色：精致大理石灰 #9A958E */
+		--theme-shadow: 30deg 10% 20%;
+		/* 阴影色：深石色 #2F2D2A */
 	}
 
 	:root[data-theme="dark"] {
 		color-scheme: dark;
-		--theme-bg: 210deg 6% 12%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
-		--theme-accent: 159deg 64% 45%;
-		--theme-accent-2: 0deg 0% 93%;
-		--theme-quote: 102deg 100% 86%;
+		/* 汉白玉主题 - 深色模式 - 增强层次系统 */
+
+		/* 基础背景层次 */
+		--theme-bg: 30deg 6% 17%;
+		/* 主背景：深石色 #2B2926 */
+		--theme-bg-elevated: 30deg 8% 22%;
+		/* 提升层：较亮石色 #383530 */
+		--theme-bg-subtle: 30deg 5% 14%;
+		/* 微妙层：更深石色 #252320 */
+		--theme-bg-muted: 30deg 7% 25%;
+		/* 柔和层：中等石色 #3E3B36 */
+
+		/* 文本和链接层次 */
+		--theme-text: 48deg 25% 97%;
+		/* 主文本：纯白玉色 #F7F6F2 */
+		--theme-text-muted: 35deg 15% 75%;
+		/* 次要文本：中等白玉 #C0BDB6 */
+		--theme-link: 30deg 7% 58%;
+		/* 链接色：精致大理石灰 #9A958E */
+
+		/* 强调色系统 */
+		--theme-accent: 345deg 65% 47%;
+		/* 主强调：重点红色 #cb2a42 */
+		--theme-accent-2: 48deg 25% 97%;
+		/* 次要强调：纯白玉色 #F7F6F2 */
+		--theme-accent-soft: 345deg 25% 35%;
+		/* 柔和强调：深红色 #6B3A42 */
+
+		/* 边框和分割线层次 */
+		--theme-border: 30deg 8% 35%;
+		/* 主边框：中石色 #524F48 */
+		--theme-border-subtle: 30deg 6% 28%;
+		/* 微妙边框：深石色 #434039 */
+
+		/* 功能色彩 */
+		--theme-quote: 30deg 7% 58%;
+		/* 引用色：精致大理石灰 #9A958E */
+		--theme-shadow: 0deg 0% 0%;
+		/* 阴影色：纯黑 #000000 */
+	}
+
+	/* 基础字体设置 - 使用霞鹜文楷字体 */
+	body {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.7;
+	}
+
+	/* 统一悬停效果规范 - 汉白玉主题 */
+	.hanbayu-card {
+		@apply rounded-xl border border-border-subtle bg-bg-elevated shadow-sm;
+		@apply transition-all duration-300 ease-out;
+	}
+
+	.hanbayu-card:hover {
+		@apply shadow-md bg-bg-subtle border-border;
+	}
+
+	.hanbayu-card-small {
+		@apply rounded-lg border border-border-subtle bg-bg-muted shadow-sm;
+		@apply transition-all duration-200 ease-out;
+	}
+
+	.hanbayu-card-small:hover {
+		@apply shadow-sm bg-bg-elevated border-border;
+	}
+
+	.hanbayu-link {
+		@apply text-link transition-colors duration-200 ease-out;
+	}
+
+	.hanbayu-link:hover {
+		@apply text-accent;
+	}
+
+	.hanbayu-button {
+		@apply rounded-lg bg-bg-muted border border-border-subtle px-4 py-2;
+		@apply font-medium text-link transition-all duration-200 ease-out;
+	}
+
+	.hanbayu-button:hover {
+		@apply bg-bg-subtle border-border text-accent shadow-sm;
+	}
+
+	/* 项目卡片专用 - 默认暗色，无悬停效果 */
+	.hanbayu-project-card {
+		@apply rounded-xl border border-border-subtle bg-bg-subtle shadow-sm;
+	}
+
+	/* 文章内容字体 */
+	article {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		font-weight: 400;
+	}
+
+	/* 代码块保持等宽字体 */
+	code,
+	pre,
+	.code {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+		font-weight: 400 !important;
+	}
+
+	/* 标题字体大小层次 */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		color: hsl(var(--theme-accent-2));
+		margin-top: 1.5em;
+		margin-bottom: 0.5em;
+	}
+
+	h1 {
+		font-weight: 600;
+		font-size: 2.5rem;
+		line-height: 1.2;
+	}
+
+	h2 {
+		font-weight: 600;
+		font-size: 2rem;
+		line-height: 1.3;
+	}
+
+	h3 {
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 1.4;
+	}
+
+	h4 {
+		font-weight: 500;
+		font-size: 1.25rem;
+		line-height: 1.4;
+	}
+
+	h5 {
+		font-weight: 500;
+		font-size: 1.125rem;
+		line-height: 1.5;
+	}
+
+	h6 {
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	/* 段落和文本 */
+	p {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.7;
+		margin-bottom: 1em;
+	}
+
+	/* 列表样式 */
+	ul,
+	ol {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		margin-bottom: 1em;
+		padding-left: 1.5em;
+	}
+
+	li {
+		margin-bottom: 0.5em;
+		line-height: 1.6;
+	}
+
+	/* 引用块样式 */
+	blockquote {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		border-left: 4px solid hsl(var(--theme-accent));
+		padding-left: 1rem;
+		margin: 1.5em 0;
+		font-style: italic;
+		color: hsl(var(--theme-quote));
+	}
+
+	/* 链接样式 */
+	a {
+		color: hsl(var(--theme-link));
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
+	}
+
+	a:hover {
+		color: hsl(var(--theme-accent));
+		text-decoration-color: hsl(var(--theme-accent));
+	}
+
+	/* Markdown渲染优化 */
+	.prose {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		color: hsl(var(--theme-text));
+		max-width: none;
+	}
+
+	/* 代码块样式优化 */
+	.prose pre {
+		background-color: hsl(var(--theme-bg));
+		border: 1px solid hsl(var(--theme-link) / 0.2);
+		border-radius: 6px;
+		padding: 1rem;
+		overflow-x: auto;
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+
+	.prose code {
+		background-color: hsl(var(--theme-link) / 0.1);
+		padding: 0.125rem 0.25rem;
+		border-radius: 3px;
+		font-size: 0.875rem;
+		border: 1px solid hsl(var(--theme-link) / 0.2);
+	}
+
+	.prose pre code {
+		background-color: transparent;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+	}
+
+	/* 标题前的#号样式 */
+	.prose h1::before,
+	.prose h2::before,
+	.prose h3::before,
+	.prose h4::before,
+	.prose h5::before,
+	.prose h6::before {
+		color: hsl(var(--theme-accent));
+		font-weight: 400;
+		margin-right: 0.5rem;
+	}
+
+	/* 哲学引言特殊样式 */
+	.philosophical-quote {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 18px;
+		line-height: 1.6;
+		color: hsl(var(--theme-quote));
+		border-left: 3px solid hsl(var(--theme-accent));
+		padding-left: 1rem;
+		margin: 1.5rem 0;
+	}
+
+	/* 个人思考样式 */
+	.premium-font {
+		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 1.6;
 	}
 }

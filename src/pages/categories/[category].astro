@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from "astro";
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+	// 分类到标签的映射
+	const categoryToTagMap: Record<string, string> = {
+		技术类: "技术",
+		生活类: "生活",
+		学习类: "笔记",
+		游戏类: "游戏",
+	};
+
+	// 为现有分类创建重定向路径
+	const paths = Object.keys(categoryToTagMap).map((category) => ({
+		params: { category },
+		props: { category, categoryToTagMap },
+	}));
+
+	return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+	category: string;
+	categoryToTagMap: Record<string, string>;
+}
+
+const { category, categoryToTagMap } = Astro.props;
+
+// 重定向到对应的标签页面
+const targetTag = categoryToTagMap[category];
+
+if (targetTag) {
+	return Astro.redirect(`/tags/${encodeURIComponent(targetTag)}/`, 301);
+} else {
+	// 如果没有找到对应的标签，重定向到标签首页
+	return Astro.redirect("/tags/", 301);
+}
+---
