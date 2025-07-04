@@ -217,7 +217,7 @@ natural elegance and cultural significance.
 	p {
 		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
 		font-weight: 400;
-		font-size: 16px;
+		font-size: 18px;
 		line-height: 1.7;
 		margin-bottom: 1em;
 	}
@@ -226,11 +226,13 @@ natural elegance and cultural significance.
 	ul,
 	ol {
 		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		font-size: 18px;
 		margin-bottom: 1em;
 		padding-left: 1.5em;
 	}
 
 	li {
+		font-size: 18px;
 		margin-bottom: 0.5em;
 		line-height: 1.6;
 	}
@@ -238,6 +240,7 @@ natural elegance and cultural significance.
 	/* 引用块样式 */
 	blockquote {
 		font-family: 'LXGW Bright SemiLight', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+		font-size: 18px;
 		border-left: 4px solid hsl(var(--theme-accent));
 		padding-left: 1rem;
 		margin: 1.5em 0;

@@ -263,20 +263,23 @@ export default {
 							marginTop: "1.5em",
 							marginBottom: "0.5em",
 						},
-						// 优化段落间距
+						// 优化段落间距和字体大小
 						"p": {
 							marginTop: "1em",
 							marginBottom: "1em",
 							lineHeight: "1.7",
+							fontSize: "18px",
 						},
 						// 优化列表样式
 						"ul, ol": {
 							marginTop: "1em",
 							marginBottom: "1em",
+							fontSize: "18px",
 						},
 						"li": {
 							marginTop: "0.5em",
 							marginBottom: "0.5em",
+							fontSize: "18px",
 						},
 						// 优化代码块样式
 						"pre": {
@@ -297,6 +300,10 @@ export default {
 							backgroundColor: "transparent",
 							border: "none",
 							borderRadius: "0",
+						},
+						// 优化引用块样式
+						"blockquote": {
+							fontSize: "18px",
 						},
 					},
 				},
