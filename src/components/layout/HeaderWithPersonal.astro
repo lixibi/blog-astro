@@ -114,8 +114,12 @@ const personalInfo = {
 	<!-- 个人介绍部分 - 仅在首页显示 -->
 	{showPersonalInfo && (
 		<div
-			class="rounded-lg border border-textColor/10 bg-bgColor p-6 shadow-sm transition-all duration-200 hover:border-textColor/20 hover:shadow-md"
+			class="rounded-lg border border-textColor/10 bg-bgColor p-6 shadow-sm transition-all duration-200 hover:border-textColor/20 hover:shadow-md relative"
 		>
+			<!-- 主题切换按钮 - 首页右上角 -->
+			<div class="absolute top-4 right-4">
+				<ThemeToggle />
+			</div>
 			<div class="text-center sm:text-left">
 				<h1 class="text-2xl font-bold text-accent-2">{personalInfo.name}</h1>
 				<p class="mt-1 text-textColor/70">{personalInfo.location}</p>
