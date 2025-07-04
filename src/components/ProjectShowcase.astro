@@ -40,13 +40,11 @@ const commercialProjects = [
 	{
 		title: "WenJianQun.com",
 		description: "文件群管理助手",
-		status: "已上线",
 		url: "https://WenJianQun.com"
 	},
 	{
 		title: "AiPageGen.com",
-		description: "AI 电商设计工具",
-		status: "立即体验",
+		description: "ai 电商设计工具",
 		url: "https://AiPageGen.com"
 	}
 ];
@@ -79,17 +77,14 @@ const commercialProjects = [
 		{commercialProjects.map((project) => (
 			<li class="grid gap-2 sm:grid-cols-[auto_1fr] xl:gap-4 2xl:gap-6">
 				<div class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-					<div class="flex items-center gap-2">
-						<a 
-							href={project.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="hanbayu-link-hover font-semibold hover:underline underline-offset-4"
-						>
-							{project.title}
-						</a>
-						<span class="text-accent text-sm font-medium">{project.status}</span>
-					</div>
+					<a 
+						href={project.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="hanbayu-link-hover font-semibold hover:underline underline-offset-4"
+					>
+						{project.title}
+					</a>
 					<p class="text-textColor/75 text-sm">{project.description}</p>
 				</div>
 			</li>
