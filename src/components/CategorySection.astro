@@ -52,8 +52,8 @@ function getPostsByTag(tag: string) {
 	<!-- 文章分类标题 - 简洁风格 -->
 	<h2 class="title mb-6 text-xl text-accent">文章分类</h2>
 
-	<!-- 增强层次的网格布局 -->
-	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+	<!-- 增强层次的网格布局 - 宽屏优化：更灵活的列数 -->
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
 		{tagCategories.map((category) => {
 			const categoryPosts = getPostsByTag(category.tag);
 			const postCount = categoryPosts.length;

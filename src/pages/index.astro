@@ -27,10 +27,11 @@ const allPostsByDate = allPosts
 			<h2 class="title mb-6 text-xl text-accent">
 				<a href="/posts/">最近文章</a>
 			</h2>
+			<!-- 宽屏优化：文章列表更好的空间利用 -->
 			<ul class="space-y-4" role="list">
 				{
 					allPostsByDate.map((p) => (
-						<li class="grid gap-2 sm:grid-cols-[auto_1fr]">
+						<li class="grid gap-2 sm:grid-cols-[auto_1fr] xl:gap-4 2xl:gap-6">
 							<PostPreview post={p} />
 						</li>
 					))

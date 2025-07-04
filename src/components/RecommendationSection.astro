@@ -104,8 +104,8 @@ const displayRecommendations = recommendations.length > 0
 	<!-- 精选推荐标题 - 简洁风格 -->
 	<h2 class="title mb-6 text-xl text-accent">精选推荐</h2>
 
-	<!-- 增强层次的网格布局 -->
-	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+	<!-- 增强层次的网格布局 - 宽屏优化：更多推荐展示 -->
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 		{displayRecommendations.map((item) => {
 			const config = typeConfig[item.type as keyof typeof typeConfig];
 

@@ -48,8 +48,8 @@ const projects = [
 				<!-- 项目描述 -->
 				<p class="mb-4 text-textColor leading-relaxed">{project.description}</p>
 
-				<!-- 项目链接 -->
-				<div class="grid gap-3 sm:grid-cols-2">
+				<!-- 项目链接 - 宽屏优化：更多列数 -->
+				<div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
 					{project.links.map((link) => (
 						<div class="hanbayu-card-small group p-3">
 							<div class="flex-1">

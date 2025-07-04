@@ -18,6 +18,21 @@ export default {
 		touchAction: false,
 	},
 	darkMode: ["class", '[data-theme="dark"]'],
+	theme: {
+		extend: {
+			// 扩展响应式断点以支持宽屏优化
+			screens: {
+				'xl': '1200px',  // 宽屏断点
+				'2xl': '1400px', // 超宽屏断点
+			},
+			// 扩展最大宽度选项
+			maxWidth: {
+				'5xl': '64rem',   // 1024px - 标准宽屏
+				'6xl': '72rem',   // 1152px - 宽屏优化
+				'7xl': '80rem',   // 1280px - 超宽屏
+			},
+		},
+	},
 	plugins: [
 		require("@tailwindcss/typography"),
 		plugin(({ addComponents }) => {
