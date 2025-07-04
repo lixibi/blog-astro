@@ -1,4 +1,4 @@
-import { g as getCollection } from './_astro_content_B_sYAw93.mjs';
+import { g as getCollection } from './_astro_content_UW1uR-xf.mjs';
 
 async function getAllPosts() {
   return await getCollection("post", ({ data }) => {
