@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "src/pages/**/*.astro": {
+      "memory": 1024
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/admin"
+    },
+    {
+      "source": "/oauth",
+      "destination": "/oauth"
+    },
+    {
+      "source": "/oauth/callback",
+      "destination": "/oauth/callback"
+    }
+  ]
+}
