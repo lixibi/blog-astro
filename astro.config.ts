@@ -122,8 +122,9 @@ export default defineConfig({
             WEBMENTION_API_KEY: envField.string({ context: "server", access: "secret", optional: true }),
             WEBMENTION_URL: envField.string({ context: "client", access: "public", optional: true }),
             WEBMENTION_PINGBACK: envField.string({ context: "client", access: "public", optional: true }),
-            OAUTH_GITHUB_CLIENT_ID: envField.string({ context: "server", access: "secret" }),
-            OAUTH_GITHUB_CLIENT_SECRET: envField.string({ context: "server", access: "secret" }),
+            OAUTH_GITHUB_CLIENT_ID: envField.string({ context: "server", access: "secret", optional: true }),
+            OAUTH_GITHUB_CLIENT_SECRET: envField.string({ context: "server", access: "secret", optional: true }),
+            OAUTH_GITHUB_REPO_ID: envField.string({ context: "server", access: "secret", optional: true }),
         },
     },
 });

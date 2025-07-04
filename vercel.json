@@ -1,21 +1,19 @@
 {
   "functions": {
     "src/pages/**/*.astro": {
-      "memory": 1024
+      "memory": 1024,
+      "maxDuration": 30
     }
   },
-  "rewrites": [
+  "headers": [
     {
-      "source": "/admin",
-      "destination": "/admin"
-    },
-    {
-      "source": "/oauth",
-      "destination": "/oauth"
-    },
-    {
-      "source": "/oauth/callback",
-      "destination": "/oauth/callback"
+      "source": "/admin/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
     }
   ]
 }
