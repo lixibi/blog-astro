@@ -1,8 +1,11 @@
 ---
+import { Icon } from "astro-icon/components";
 
 // 项目配置 - 重点展示AI AGENTS
 const projects = [
 	{
+		title: "开源项目",
+		icon: "mdi:github",
 		description: "个人开发的开源项目，涵盖Web应用、工具库等，持续维护更新。",
 		featured: true, // 标记为重点项目
 		links: [
@@ -19,6 +22,8 @@ const projects = [
 		]
 	},
 	{
+		title: "技术平台",
+		icon: "mdi:server-network",
 		description: "负责运营的技术平台，提供AI服务和开发工具，服务开发者社区。",
 		featured: false,
 		links: [
@@ -39,12 +44,18 @@ const projects = [
 
 <section class="mb-8">
 	<!-- 项目标题 - 简洁风格 -->
-	<h2 class="title mb-6 text-xl text-accent">开源项目</h2>
+	<h2 class="title mb-6 text-xl text-accent">开源��目</h2>
 
 	<div class="space-y-6">
 		{projects.map((project) => (
 			<!-- 项目卡片 - 默认暗色，悬停变亮 -->
 			<div class="hanbayu-project-card p-6">
+				<!-- 分类标题 -->
+				<div class="mb-4 flex items-center gap-2">
+					<Icon name={project.icon} class="h-5 w-5 text-accent" />
+					<h3 class="text-lg font-semibold text-accent-2">{project.title}</h3>
+				</div>
+
 				<!-- 项目描述 -->
 				<p class="mb-4 text-textColor leading-relaxed">{project.description}</p>
 
@@ -72,3 +83,4 @@ const projects = [
 		))}
 	</div>
 </section>
+

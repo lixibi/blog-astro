@@ -6,7 +6,7 @@ import { Icon } from "astro-icon/components";
 let recommendations: CollectionEntry<"recommendation">[] = [];
 try {
 	const allRecommendations = await getCollection("recommendation");
-	recommendations = allRecommendations.slice(0, 4); // 只显示前4个
+	recommendations = allRecommendations.slice(0, 6); // 只显示前6个
 } catch (error) {
 	// 如果没有推荐内容，使用示例数据
 	console.log("No recommendations found, using sample data:", error);
@@ -21,7 +21,7 @@ try {
 	bookPosts = allPosts
 		.filter(post => post.data.tags.includes("读书"))
 		.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
-		.slice(0, 4);
+		.slice(0, 6);
 } catch (error) {
 	console.log("No book posts found:", error);
 	bookPosts = [];
@@ -137,8 +137,8 @@ if (bookRecommendations.length > 0) {
 	displayRecommendations = sampleRecommendations;
 }
 
-// 限制显示数量为4个
-displayRecommendations = displayRecommendations.slice(0, 4);
+// 限制显示数量为6个
+displayRecommendations = displayRecommendations.slice(0, 6);
 ---
 
 <section class="mb-8">
