@@ -5,83 +5,95 @@ import { Icon } from "astro-icon/components";
 const projects = [
 	{
 		title: "SafeDEL",
-		icon: "mdi:delete-variant",
 		description: "安全删除工具，防止意外删除重要文件",
 		url: "https://github.com/lixibi/SafeDEL"
 	},
 	{
 		title: "CloudPaste",
-		icon: "mdi:cloud-upload",
 		description: "云端剪贴板同步工具，多设备间快速共享文本",
 		url: "https://github.com/lixibi/CloudPaste"
 	},
 	{
 		title: "Browser-Use",
-		icon: "mdi:web",
 		description: "浏览器自动化客户端，提升网页操作效率",
 		url: "https://github.com/lixibi/browser-use"
 	},
 	{
 		title: "English Phrase Cards",
-		icon: "mdi:cards-variant",
 		description: "英语短语卡片学习工具，轻松记忆常用表达",
 		url: "https://github.com/lixibi/english-phrase-cards"
 	},
 	{
 		title: "Prose Polish",
-		icon: "mdi:format-text",
 		description: "文本优化工具，提升写作质量和表达效果",
 		url: "https://github.com/lixibi/prose-polish"
 	},
 	{
 		title: "Blog Astro",
-		icon: "mdi:newspaper-variant",
 		description: "基于Astro的现代化博客主题，简洁高效",
 		url: "https://github.com/lixibi/blog-astro"
+	}
+];
+
+// 运营项目
+const commercialProjects = [
+	{
+		title: "WenJianQun.com",
+		description: "文件群管理助手",
+		status: "已上线",
+		url: "https://WenJianQun.com"
+	},
+	{
+		title: "AiPageGen.com",
+		description: "AI 电商设计工具",
+		status: "立即体验",
+		url: "https://AiPageGen.com"
 	}
 ];
 ---
 
 <section class="mb-8">
-	<!-- 项目标题 - 简洁风格 -->
+	<!-- 开源项目 -->
 	<h2 class="title mb-6 text-xl text-accent">开源项目</h2>
-
-	<!-- 项目网格布局 - 宽屏优化：更灵活的列数 -->
-	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
+	<ul class="space-y-4 mb-8" role="list">
 		{projects.map((project) => (
-			<!-- 项目卡片 - 默认暗色，悬停变亮 -->
-			<div class="hanbayu-card p-4 group transition-transform hover:scale-105">
-				<!-- 项目图标 -->
-				<div class="mb-3 flex justify-center">
-					<div class="rounded-full bg-bg-muted border border-border-subtle p-3 shadow-sm">
-						<Icon name={project.icon} class="h-6 w-6 text-accent" />
-					</div>
-				</div>
-
-				<!-- 项目标题 -->
-				<h3 class="text-base font-semibold text-accent-2 mb-2 text-center">
-					{project.title}
-				</h3>
-
-				<!-- 项目描述 -->
-				<p class="text-sm text-text-muted mb-3 text-center leading-relaxed">
-					{project.description}
-				</p>
-
-				<!-- 项目链接 -->
-				<div class="text-center">
-					<a
+			<li class="grid gap-2 sm:grid-cols-[auto_1fr] xl:gap-4 2xl:gap-6">
+				<div class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+					<a 
 						href={project.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="hanbayu-link-hover text-sm hover:underline inline-flex items-center"
+						class="hanbayu-link-hover font-semibold hover:underline underline-offset-4"
 					>
-						查看项目
-						<Icon name="mdi:external-link" class="ml-1 h-3 w-3" />
+						{project.title}
 					</a>
+					<p class="text-textColor/75 text-sm">{project.description}</p>
 				</div>
-			</div>
+			</li>
 		))}
-	</div>
+	</ul>
+
+	<!-- 运营项目 -->
+	<h2 class="title mb-6 text-xl text-accent">运营项目</h2>
+	<ul class="space-y-4" role="list">
+		{commercialProjects.map((project) => (
+			<li class="grid gap-2 sm:grid-cols-[auto_1fr] xl:gap-4 2xl:gap-6">
+				<div class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
+					<div class="flex items-center gap-2">
+						<a 
+							href={project.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="hanbayu-link-hover font-semibold hover:underline underline-offset-4"
+						>
+							{project.title}
+						</a>
+						<span class="text-accent text-sm font-medium">{project.status}</span>
+					</div>
+					<p class="text-textColor/75 text-sm">{project.description}</p>
+				</div>
+			</li>
+		))}
+	</ul>
 </section>
 
