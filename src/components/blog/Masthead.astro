@@ -103,7 +103,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 			<div class="flex flex-wrap gap-2">
 				{data.tags.map((tag) => (
 					<a
-						href={`/tags/${tag}/`}
+						href={`/tags/${tag.toLowerCase()}/`}
 						class="bg-bg-muted text-text-muted hover:bg-accent-soft inline-flex items-center rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-accent"
 						aria-label={`查看更多关于 ${tag} 的文章`}
 						data-pagefind-filter="tag"
