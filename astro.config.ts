@@ -47,7 +47,7 @@ export default defineConfig({
         /**
          * optional
          **/
-        short_name: "李希宁的博客",
+        short_name: "李希宁",
         description: siteConfig.description,
         lang: siteConfig.lang,
         icon: "public/icon.svg", // the source for generating favicon & icons
