@@ -1,9 +1,15 @@
 ---
-title: "HebeCrawl：构建AI驱动的智能工作流系统深度实践"
-description: "从零构建类似n8n的AI智能工作流系统，深度解析提示词工程、智能决策树、多模态处理和容错机制的完整实现"
-publishDate: "2025-01-05"
-tags: ["AI工作流", "提示词工程", "智能决策", "FastAPI", "多模态处理", "技术深度"]
-ogImage: "/social-card.avif"
+title: HebeCrawl：构建AI驱动的智能工作流系统深度实践
+description: 从零构建类似n8n的AI智能工作流系统，深度解析提示词工程、智能决策树、多模态处理和容错机制的完整实现
+publishDate: 2025-07-05T00:00:00
+tags:
+  - AI工作流
+  - 提示词工程
+  - 智能决策
+  - FastAPI
+  - 多模态处理
+  - 技术深度
+ogImage: /social-card.avif
 ---
 
 > 不只是一个爬虫工具，而是一个完整的AI驱动智能工作流系统
@@ -2390,5 +2396,5 @@ HebeCrawl项目从最初的想法到最终的产品，经历了完整的软件�
 
 *项目地址：[HebeCrawl](https://github.com/your-username/hebecrawl)*  
 *技术栈：FastAPI + Python + AI + Docker*  
-*开发周期：4周*  
+*开发周期：2周*  
 *代码量：约2000行*
