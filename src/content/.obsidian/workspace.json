@@ -1,0 +1,192 @@
+{
+  "main": {
+    "id": "b2474b18a1a51a9e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2daf3d834fe29ecf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b6f652693e1fe55d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "post/20230204_我看见的世界李飞飞自传.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "20230204_我看见的世界李飞飞自传"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9bed00d01da23831",
+    "type": "split",
+    "children": [
+      {
+        "id": "4fa5180dd7c6d27d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8a8686d5f016bf1a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "3cc7c1276fe64726",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "0e2791b7e476c910",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4b983dcafb25eaab",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef64cd2f11a442a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8acfef93a08f0210",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "post/20230204_我看见的世界李飞飞自传.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "20230204_我看见的世界李飞飞自传 的反向链接列表"
+            }
+          },
+          {
+            "id": "8626c9d2d0cd25e9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "post/20230204_我看见的世界李飞飞自传.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "20230204_我看见的世界李飞飞自传 的出链列表"
+            }
+          },
+          {
+            "id": "07757e12007532a1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "f2c5092005a2eb0e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "post/20230204_我看见的世界李飞飞自传.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "20230204_我看见的世界李飞飞自传 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "b6f652693e1fe55d",
+  "lastOpenFiles": [
+    "post/20230122_灿烂千阳读书笔记.md",
+    "post/20221201_元认知实用指南.md",
+    "post/20221115_学习的拉伸区与专注力探讨.md",
+    "post/20220825_素食者意象分析.md",
+    "post/20220825_素食者人物分析.md",
+    "post/20220825_素食者夫妻关系分析.md",
+    "post/20220815_素食者读后感.md",
+    "post/20210322_道德经解读四.md",
+    "post/20210308_道德经解读二.md",
+    "post/20210301_道德经解读一.md",
+    "post/2025.07.03_追求简洁之道的思考.md",
+    "note/2025.07.03_跨越时空的告慰：从《我爱这土地》到《如愿》的精神传承.md",
+    "note/2025.02.01_逆境生存法则：萧条时期的生存智慧与危机应对.md",
+    "note/2025.01.29_商业经营哲学：利润思维与可持续发展的智慧.md",
+    "note/2025.01.23_人际关系智慧：构建有效人脉的策略与技巧.md",
+    "note/2025.01.26_领导力修炼：从管理者到真正领袖的蜕变之路.md",
+    "note/2025.01.20_工作能力提升：掌握解决问题的六种核心能力.md",
+    "note/2025.01.15_职场核心素养：成为真正人财的基石.md"
+  ]
+}
