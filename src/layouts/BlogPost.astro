@@ -55,7 +55,7 @@ const { headings } = await render(post);
 			<div class="hanbayu-card p-6 sm:p-8">
 				<div class="space-y-4">
 					<!-- 文章标题 -->
-					<h1 class="title text-2xl leading-tight text-accent-2 sm:text-3xl lg:text-4xl">
+					<h1 class="title text-2xl leading-tight text-accent-2 sm:text-3xl lg:text-4xl" data-pagefind-meta="title">
 						{title}
 					</h1>
 
@@ -64,6 +64,7 @@ const { headings } = await render(post);
 						<p
 							class="text-text-muted text-base leading-relaxed sm:text-lg"
 							style="text-indent: 2em; margin: 0;"
+							data-pagefind-meta="description"
 						>
 							{description}
 						</p>
@@ -75,11 +76,12 @@ const { headings } = await render(post);
 
 	<div class="gap-x-10 lg:flex lg:items-start">
 		{!!headings.length && <TOC headings={headings} />}
-		<article class="flex-grow break-words" data-pagefind-body>
+		<article class="flex-grow break-words">
 			<div id="blog-hero"><Masthead content={post} /></div>
 			<!-- 宽屏优化：文章内容区域渐进式宽度扩展 -->
 			<div
 				class="prose prose-lg prose-cactus mt-12 max-w-4xl prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-code:font-mono prose-pre:font-mono sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none xl:max-w-5xl 2xl:max-w-6xl"
+				data-pagefind-body
 			>
 				<slot />
 				<WebMentions />
