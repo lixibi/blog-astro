@@ -7,8 +7,10 @@ echo ==========================================
 echo.
 
 echo 📦 构建项目...
-pnpm build
-echo ✅ 构建完成！
+call pnpm build
+echo.
+echo 📦 构建命令执行完毕
+echo.
 
 echo 📁 添加文件到暂存区...
 git add .
