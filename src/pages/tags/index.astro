@@ -24,28 +24,13 @@ const meta = {
 		</p>
 	</div>
 
-	<!-- 搜索框 -->
-	<div class="mb-8">
-		<div class="relative">
-			<Icon
-				name="mdi:magnify"
-				class="text-text-muted absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2"
-			/>
-			<input
-				type="text"
-				placeholder="搜索标签..."
-				class="border-border-subtle bg-bg-elevated text-text w-full rounded-lg border px-10 py-3 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-				id="tag-search"
-			/>
-		</div>
-	</div>
 
 	<!-- 标签列表 -->
 	<div id="tags-container">
 		<ul class="flex flex-wrap gap-3" id="tags-list">
 			{
 				allTags.map(([tag, count]) => (
-					<li class="tag-item" data-tag={tag.toLowerCase()}>
+					<li class="tag-item">
 						<a
 							class="hanbayu-card inline-flex items-center gap-2 px-4 py-2 text-sm transition-all hover:scale-105"
 							data-astro-prefetch
@@ -61,55 +46,5 @@ const meta = {
 			}
 		</ul>
 
-		<!-- 无结果提示 -->
-		<div id="no-results" class="hidden py-12 text-center">
-			<Icon name="mdi:tag-off" class="text-text-muted mx-auto mb-4 h-16 w-16" />
-			<p class="text-text-muted">没有找到匹配的标签</p>
-		</div>
 	</div>
 </PageLayout>
-
-<script>
-	// 标签搜索功能
-	const searchInput = document.getElementById("tag-search") as HTMLInputElement;
-	const tagsList = document.getElementById("tags-list") as HTMLUListElement;
-	const noResults = document.getElementById("no-results") as HTMLDivElement;
-	const tagItems = document.querySelectorAll(".tag-item") as NodeListOf<HTMLLIElement>;
-
-	function filterTags(searchTerm: string) {
-		const term = searchTerm.toLowerCase().trim();
-		let visibleCount = 0;
-
-		tagItems.forEach((item) => {
-			const tagName = item.getAttribute("data-tag") || "";
-			const isVisible = tagName.includes(term) || term === "";
-
-			item.style.display = isVisible ? "block" : "none";
-			if (isVisible) visibleCount++;
-		});
-
-		// 显示/隐藏无结果提示
-		if (visibleCount === 0 && term !== "") {
-			tagsList.style.display = "none";
-			noResults.style.display = "block";
-		} else {
-			tagsList.style.display = "flex";
-			noResults.style.display = "none";
-		}
-	}
-
-	// 搜索事件监听
-	searchInput?.addEventListener("input", (e) => {
-		const target = e.target as HTMLInputElement;
-		filterTags(target.value);
-	});
-
-	// 支持键盘导航
-	searchInput?.addEventListener("keydown", (e) => {
-		if (e.key === "Escape") {
-			searchInput.value = "";
-			filterTags("");
-			searchInput.blur();
-		}
-	});
-</script>

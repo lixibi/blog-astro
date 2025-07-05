@@ -1,5 +1,5 @@
 {
-  "buildCommand": "astro build && npx pagefind --site dist --output-path dist/pagefind --exclude-selectors=\"nav,footer,header,.toc\" --force-language=\"zh\"",
+  "buildCommand": "astro build",
   "rewrites": [
     {
       "source": "/admin",
@@ -15,15 +15,5 @@
           "value": "no-cache, no-store, must-revalidate"
         }
       ]
-    },
-    {
-      "source": "/pagefind/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
   ]
 }
