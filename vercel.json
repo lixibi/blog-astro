@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build && npm run postbuild",
+  "buildCommand": "astro build && npx pagefind --site dist --output-path dist/pagefind --exclude-selectors=\"nav,footer,header,.toc\" --force-language=\"zh\"",
   "rewrites": [
     {
       "source": "/admin",
