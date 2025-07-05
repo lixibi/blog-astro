@@ -14,7 +14,9 @@
       "Bash(git config:*)",
       "Bash(gh:*)",
       "Bash(find:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(pnpm build:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   }
