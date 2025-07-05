@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
+                "file": "post/20240615_Obsidian同步方案对比.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20250705_艾青诗歌与如愿的情感共鸣"
+              "title": "20240615_Obsidian同步方案对比"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
+                "file": "post/20240615_Obsidian同步方案对比.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "20250705_艾青诗歌与如愿的情感共鸣 的反向链接列表"
+              "title": "20240615_Obsidian同步方案对比 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
+                "file": "post/20240615_Obsidian同步方案对比.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "20250705_艾青诗歌与如愿的情感共鸣 的出链列表"
+              "title": "20240615_Obsidian同步方案对比 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
+                "file": "post/20240615_Obsidian同步方案对比.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "20250705_艾青诗歌与如愿的情感共鸣 的大纲"
+              "title": "20240615_Obsidian同步方案对比 的大纲"
             }
           }
         ]
@@ -170,8 +170,14 @@
   },
   "active": "b6f652693e1fe55d",
   "lastOpenFiles": [
-    "post/20250705_image-gallery-test.md",
+    "post/20250705_HebeCrawl项目开发日记.md",
+    "post/2025-7-5 HebeCrawl项目开发日记 160037.md",
     "post/20250705_image-test.md",
+    "post/20250705_image-gallery-test.md",
+    "post/20250105_HebeCrawl项目开发日记.md",
+    "post/HebeCrawl项目开发日记.md",
+    "post/hebecrawl-ai-workflow-development-journal.md",
+    "post/20250705_艾青诗歌与如愿的情感共鸣.md",
     "e30f78bd9bb320e76e8b00f548f4abfa.jpg",
     "post/测试图床.md",
     "post/20241001_我的阿勒泰读书笔记.md",
@@ -194,12 +200,6 @@
     "post/20220825_素食者人物分析.md",
     "post/20220825_素食者夫妻关系分析.md",
     "post/20220815_素食者读后感.md",
-    "post/20210322_道德经解读四.md",
-    "post/20210308_道德经解读二.md",
-    "note/2025.07.03_跨越时空的告慰：从《我爱这土地》到《如愿》的精神传承.md",
-    "note/2025.02.01_逆境生存法则：萧条时期的生存智慧与危机应对.md",
-    "note/2025.01.29_商业经营哲学：利润思维与可持续发展的智慧.md",
-    "note/2025.01.23_人际关系智慧：构建有效人脉的策略与技巧.md",
-    "note/2025.01.26_领导力修炼：从管理者到真正领袖的蜕变之路.md"
+    "post/20210322_道德经解读四.md"
   ]
 }
