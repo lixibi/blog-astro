@@ -44,6 +44,7 @@ set NEW_POSTS=0
 set NEW_NOTES=0
 set MODIFIED_POSTS=0
 set MODIFIED_NOTES=0
+set NEW_IMAGES=0
 set OTHER_CHANGES=0
 
 for /f "tokens=1,* delims= " %%a in (temp_status.txt) do (
@@ -65,6 +66,13 @@ for /f "tokens=1,* delims= " %%a in (temp_status.txt) do (
         ) else (
             set /a MODIFIED_NOTES+=1
             echo ✏️  修改笔记文章: !FILEPATH!
+        )
+    ) else if "!FILEPATH:~0,14!"=="public/images/" (
+        if "!STATUS!"=="??" (
+            set /a NEW_IMAGES+=1
+            echo 🖼️  新增图片: !FILEPATH!
+        ) else (
+            echo 🖼️  更新图片: !FILEPATH!
         )
     ) else (
         set /a OTHER_CHANGES+=1
@@ -141,6 +149,7 @@ echo    新增博客文章: !NEW_POSTS! 篇
 echo    新增笔记文章: !NEW_NOTES! 篇
 echo    修改博客文章: !MODIFIED_POSTS! 篇
 echo    修改笔记文章: !MODIFIED_NOTES! 篇
+echo    新增图片文件: !NEW_IMAGES! 个
 echo    其他文件变更: !OTHER_CHANGES! 个
 echo.
 echo 🏷️  建议提交信息: !COMMIT_MSG!
