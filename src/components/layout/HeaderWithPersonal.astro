@@ -18,10 +18,11 @@ const personalInfo = {
 	description: "",
 	github: "https://github.com/lixibi",
 	email: "mailto:lixining@lixining.com",
-	bilibili: "https://space.bilibili.com/your-uid",
+	notes: "/notes/",
 	weibo: "https://weibo.com/lixining",
 	twitter: "https://twitter.com/lixining",
 	linuxdo: "https://linux.do/u/lixining",
+	bilibili: "https://space.bilibili.com/your-uid",
 };
 ---
 
@@ -29,36 +30,100 @@ const personalInfo = {
 <header class="group relative mb-16" id="main-header">
 	<!-- 导航栏部分 - 仅在非首页显示 -->
 	{!showPersonalInfo && (
-		<div class="mb-8 flex items-center sm:ps-[4.5rem]">
-		<div class="flex sm:flex-col">
-			<a
-				aria-current={Astro.url.pathname === "/" ? "page" : false}
-				class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
-				href="/"
-			>
-				<svg
-					aria-hidden="true"
-					class="me-3 h-10 w-6 sm:absolute sm:start-[-4.5rem] sm:me-0 sm:h-20 sm:w-12"
-					fill="none"
-					focusable="false"
-					viewBox="0 0 272 480"
-					xmlns="http://www.w3.org/2000/svg"
+		<div class="mb-8 flex items-center justify-between">
+			<!-- Logo 区域 -->
+			<div class="flex items-center">
+				<a
+					aria-current={Astro.url.pathname === "/" ? "page" : false}
+					class="inline-flex items-center grayscale hover:filter-none"
+					href="/"
 				>
+					<svg
+						aria-hidden="true"
+						class="me-3 h-10 w-6"
+						fill="none"
+						focusable="false"
+						viewBox="0 0 272 480"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						
+						
+					</svg>
 					
-					
-				</svg>
-				
-			</a>
+				</a>
+			</div>
+
+			<!-- 桌面端导航菜单 -->
 			<nav
 				aria-label="Main menu"
-				class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-textColor shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-textColor/20 sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
-				id="navigation-menu"
+				class="hidden sm:flex sm:items-center sm:space-x-6"
 			>
 				{
 					menuLinks.map((link) => (
 						<a
 							aria-current={Astro.url.pathname === link.path ? "page" : false}
-							class="px-4 py-4 transition-colors hover:text-accent sm:py-0"
+							class="px-3 py-2 text-sm font-medium transition-colors hover:text-accent"
+							data-astro-prefetch
+							href={link.path}
+						>
+							{link.title}
+						</a>
+					))
+				}
+			</nav>
+
+			<!-- 右侧工具栏 -->
+			<div class="flex items-center space-x-3">
+				<Search />
+				<ThemeToggle />
+				
+				<!-- 移动端菜单按钮 -->
+				<mobile-button>
+					<button
+						aria-expanded="false"
+						aria-haspopup="menu"
+						aria-label="打开主菜单"
+						class="group relative h-8 w-8 sm:hidden"
+						id="toggle-navigation-menu"
+						type="button"
+					>
+						<svg
+							aria-hidden="true"
+							class="absolute start-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
+							fill="none"
+							focusable="false"
+							stroke="currentColor"
+							stroke-width="1.5"
+							viewBox="0 0 24 24"
+						>
+							<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"></path>
+						</svg>
+						<svg
+							aria-hidden="true"
+							class="absolute start-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+							fill="none"
+							focusable="false"
+							stroke="currentColor"
+							stroke-width="1.5"
+							viewBox="0 0 24 24"
+						>
+							<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+						</svg>
+					</button>
+				</mobile-button>
+			</div>
+
+			<!-- 移动端导航菜单 -->
+			<nav
+				aria-label="Mobile menu"
+				class="absolute left-0 right-0 top-full z-50 hidden flex-col space-y-2 rounded-lg bg-bgColor/95 p-4 shadow-lg backdrop-blur-sm group-[.menu-open]:flex sm:hidden"
+				id="mobile-navigation-menu"
+			>
+				{
+					menuLinks.map((link) => (
+						<a
+							aria-current={Astro.url.pathname === link.path ? "page" : false}
+							class="block px-3 py-2 text-sm font-medium transition-colors hover:text-accent"
 							data-astro-prefetch
 							href={link.path}
 						>
@@ -68,47 +133,6 @@ const personalInfo = {
 				}
 			</nav>
 		</div>
-		<Search />
-		<ThemeToggle />
-		<mobile-button>
-			<button
-				aria-expanded="false"
-				aria-haspopup="menu"
-				aria-label="Open main menu"
-				class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
-				id="toggle-navigation-menu"
-				type="button"
-			>
-				<svg
-					aria-hidden="true"
-					class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
-					fill="none"
-					focusable="false"
-					id="line-svg"
-					stroke="currentColor"
-					stroke-width="1.5"
-					viewBox="0 0 24 24"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
-					></path>
-				</svg>
-				<svg
-					aria-hidden="true"
-					class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
-					fill="none"
-					focusable="false"
-					id="cross-svg"
-					stroke="currentColor"
-					stroke-width="1.5"
-					viewBox="0 0 24 24"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
-				</svg>
-			</button>
-		</mobile-button>
-	</div>
 	)}
 
 	<!-- 个人介绍部分 - 仅在首页显示 -->
@@ -163,13 +187,11 @@ const personalInfo = {
 						<Icon name="mdi:email" class="h-5 w-5" />
 					</a>
 					<a
-						href={personalInfo.bilibili}
-						target="_blank"
-						rel="noopener noreferrer"
+						href={personalInfo.notes}
 						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
-						aria-label="Bilibili"
+						aria-label="笔记"
 					>
-						<Icon name="mdi:video" class="h-5 w-5" />
+						<Icon name="mdi:notebook" class="h-5 w-5" />
 					</a>
 					<a
 						href={personalInfo.weibo}
@@ -197,6 +219,15 @@ const personalInfo = {
 						aria-label="Linux.do"
 					>
 						<Icon name="mdi:forum" class="h-5 w-5" />
+					</a>
+					<a
+						href={personalInfo.bilibili}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-full bg-textColor/5 p-2 text-textColor/70 transition-colors hover:bg-accent/10 hover:text-accent"
+						aria-label="B站"
+					>
+						<Icon name="bilibili" class="h-5 w-5" />
 					</a>
 				</div>
 			</div>

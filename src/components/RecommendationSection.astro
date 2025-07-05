@@ -42,7 +42,7 @@ const bookRecommendations = bookPosts.map(post => {
 		: post.data.description;
 
 	// 生成个人笔记摘要
-	const note = `${new Date(post.data.publishDate).getFullYear()}年读完，深有感触`;
+	const note = "";
 
 	return {
 		title: bookTitle,
@@ -66,7 +66,7 @@ const sampleRecommendations = [
 		rating: 9,
 		description: "软件开发的经典之作，全面覆盖软件构建的各个方面，是每个程序员必读的经典。",
 		tags: ["编程", "软件工程", "技术"],
-		note: "深入浅出，实用性强",
+		note: "",
 		url: undefined // 示例数据没有链接
 	},
 	{
@@ -76,7 +76,7 @@ const sampleRecommendations = [
 		rating: 8,
 		description: "经典科幻电影，探讨现实与虚拟的边界，引发对人工智能和现实本质的思考。",
 		tags: ["科幻", "哲学", "AI"],
-		note: "视觉震撼，思想深刻",
+		note: "",
 		url: undefined // 示例数据没有链接
 	}
 ];
