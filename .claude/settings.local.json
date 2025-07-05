@@ -19,7 +19,9 @@
       "Bash(npm install:*)",
       "Bash(export:*)",
       "Bash(echo:*)",
-      "Bash(env)"
+      "Bash(env)",
+      "Bash(mkdir:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }

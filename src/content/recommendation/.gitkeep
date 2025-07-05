@@ -1,0 +1,25 @@
+---
+title: "示例书籍推荐"
+description: "这是一个示例推荐文件，展示如何使用recommendation功能"
+type: "book"
+author: "示例作者"
+year: 2024
+rating: 8
+publishDate: "2024-01-01"
+status: "finished"
+tags: ["示例", "推荐"]
+---
+
+这是一个示例推荐文件，用于展示recommendation功能的使用方法。
+
+## 内容简介
+
+这里可以写推荐内容的简介...
+
+## 推荐理由
+
+这里可以写推荐理由...
+
+## 个人感受
+
+这里可以写个人的阅读/观看感受...

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post/20240730_艾青诗歌与如愿的情感共鸣.md",
+                "file": "post/20230520_一生的亲密关系读书笔记.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20240730_艾青诗歌与如愿的情感共鸣"
+              "title": "20230520_一生的亲密关系读书笔记"
             }
           }
         ]
@@ -94,7 +94,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/20240730_艾青诗歌与如愿的情感共鸣.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "20240730_艾青诗歌与如愿的情感共鸣 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -113,12 +112,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/20240730_艾青诗歌与如愿的情感共鸣.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "20240730_艾青诗歌与如愿的情感共鸣 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -168,8 +166,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b6f652693e1fe55d",
+  "active": "8a8686d5f016bf1a",
   "lastOpenFiles": [
+    "recommendation/sample-book.md",
+    "recommendation",
     "post/20230520_一生的亲密关系读书笔记.md",
     "note/2025.01.15_职场核心素养：成为真正人财的基石.md",
     "post/20230204_我看见的世界李飞飞自传.md",
