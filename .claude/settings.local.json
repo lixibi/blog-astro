@@ -21,7 +21,8 @@
       "Bash(echo:*)",
       "Bash(env)",
       "Bash(mkdir:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
