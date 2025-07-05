@@ -4,8 +4,8 @@
 	"scripts": {
 		"dev": "astro dev --host 0.0.0.0",
 		"start": "astro dev --host 0.0.0.0",
-		"build": "astro build",
-		"postbuild": "pagefind --site dist --output-path dist/pagefind --exclude-selectors=\"nav,footer,header,.toc\" --force-language=\"zh\"",
+		"build": "astro build && pagefind --site dist --output-path dist/pagefind --exclude-selectors=\"nav,footer,header,.toc\" --force-language=\"zh\"",
+		"postbuild": "echo 'Pagefind indexing completed'",
 		"preview": "astro preview",
 		"lint": "biome lint .",
 		"format": "pnpm run format:code && pnpm run format:imports",

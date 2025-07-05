@@ -12,22 +12,6 @@
 			"handle": "filesystem"
 		},
 		{
-			"src": "^\\/_image\\/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^\\/categories\\/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^\\/notes\\/rss\\.xml\\/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^\\/rss\\.xml\\/?$",
-			"dest": "_render"
-		},
-		{
 			"src": "/.*",
 			"dest": "/404.html",
 			"status": 404

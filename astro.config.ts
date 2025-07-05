@@ -27,7 +27,7 @@ import rehypeKatex from "rehype-katex"; // Render LaTeX with KaTeX
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   adapter: vercel(),
     image: {
         domains: ["webmention.io"],
