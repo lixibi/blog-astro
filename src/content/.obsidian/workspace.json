@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post/20250705_把生命活成热爱的模样.md",
+                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "20250705_把生命活成热爱的模样"
+              "title": "20250705_艾青诗歌与如愿的情感共鸣"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/20250705_把生命活成热爱的模样.md",
+                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "20250705_把生命活成热爱的模样 的反向链接列表"
+              "title": "20250705_艾青诗歌与如愿的情感共鸣 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/20250705_把生命活成热爱的模样.md",
+                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "20250705_把生命活成热爱的模样 的出链列表"
+              "title": "20250705_艾青诗歌与如愿的情感共鸣 的出链列表"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/20250705_把生命活成热爱的模样.md",
+                "file": "post/20250705_艾青诗歌与如愿的情感共鸣.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "20250705_把生命活成热爱的模样 的大纲"
+              "title": "20250705_艾青诗歌与如愿的情感共鸣 的大纲"
             }
           }
         ]
@@ -170,8 +170,13 @@
   },
   "active": "b6f652693e1fe55d",
   "lastOpenFiles": [
-    "post/20250705_HebeCrawl项目开发日记.md",
+    "wx/20250705_跨越时空的情感对话.md",
+    "post/20250705_艾青诗歌与如愿的情感共鸣.md",
+    "wx",
+    "post/20240315_复杂性困境与简洁之道.md",
+    "post/20240315_代码之道中文翻译.md",
     "post/20250705_把生命活成热爱的模样.md",
+    "post/20250705_HebeCrawl项目开发日记.md",
     "post/20240615_Obsidian同步方案对比.md",
     "post/2025-7-5 HebeCrawl项目开发日记 160037.md",
     "post/20250705_image-test.md",
@@ -179,7 +184,6 @@
     "post/20250105_HebeCrawl项目开发日记.md",
     "post/HebeCrawl项目开发日记.md",
     "post/hebecrawl-ai-workflow-development-journal.md",
-    "post/20250705_艾青诗歌与如愿的情感共鸣.md",
     "e30f78bd9bb320e76e8b00f548f4abfa.jpg",
     "post/测试图床.md",
     "post/20241001_我的阿勒泰读书笔记.md",
@@ -197,9 +201,6 @@
     "post/20230204_我看见的世界李飞飞自传.md",
     "post/20230122_灿烂千阳读书笔记.md",
     "post/20221201_元认知实用指南.md",
-    "post/20221115_学习的拉伸区与专注力探讨.md",
-    "post/20220825_素食者意象分析.md",
-    "post/20220825_素食者人物分析.md",
-    "post/20220825_素食者夫妻关系分析.md"
+    "post/20221115_学习的拉伸区与专注力探讨.md"
   ]
 }
