@@ -11,11 +11,11 @@ tags: ["测试", "图床", "图片"]
 
 ## 第一张图片
 
-![测试图片1](e30f78bd9bb320e76e8b00f548f4abfa.jpg)
+![测试图片1](/images/posts/e30f78bd9bb320e76e8b00f548f4abfa.jpg)
 
 ## 第二张图片
 
-![测试图片2](0116826ec040914ab3d05e506e51c234.jpg)
+![测试图片2](/images/posts/0116826ec040914ab3d05e506e51c234.jpg)
 
 ## 总结
 
