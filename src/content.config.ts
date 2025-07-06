@@ -85,4 +85,17 @@ const recommendation = defineCollection({
 		}),
 });
 
-export const collections = { post, note, recommendation };
+// 微信公众号文章集合
+const wx = defineCollection({
+	type: 'content',
+	schema: baseSchema.extend({
+		description: z.string().optional(),
+		publishDate: z
+			.string()
+			.or(z.date())
+			.transform((val) => new Date(val)),
+		tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+	}),
+});
+
+export const collections = { post, note, recommendation, wx };

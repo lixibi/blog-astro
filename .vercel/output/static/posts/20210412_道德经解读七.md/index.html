@@ -1,0 +1,298 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="zh-CN"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>道德经解读（七）：成功失败的本质与道的特性 • 李希宁的博客</title><link href="/icons/site.avif" rel="icon" type="image/avif"><link rel="icon" href="/favicon-32x32.png" type="image/png"><link href="/icons/apple-touch-icon.png" rel="apple-touch-icon"><link href="/manifest.webmanifest" rel="manifest"><link href="https://blog.lixining.com/posts/20210412_%E9%81%93%E5%BE%B7%E7%BB%8F%E8%A7%A3%E8%AF%BB%E4%B8%83.md/" rel="canonical"><meta content="道德经解读（七）：成功失败的本质与道的特性 • 李希宁的博客" name="title"><meta content="深入探讨成功与失败的不稳定性，理解道的无形特质，学会在变化中保持内在平静，掌握氛围编程者的智慧境界" name="description"><meta content="李希宁" name="author"><meta content="" name="theme-color"><meta content="article" property="og:type"><meta content="道德经解读（七）：成功失败的本质与道的特性" property="og:title"><meta content="深入探讨成功与失败的不稳定性，理解道的无形特质，学会在变化中保持内在平静，掌握氛围编程者的智慧境界" property="og:description"><meta content="https://blog.lixining.com/posts/20210412_%E9%81%93%E5%BE%B7%E7%BB%8F%E8%A7%A3%E8%AF%BB%E4%B8%83.md/" property="og:url"><meta content="李希宁的博客" property="og:site_name"><meta content="zh-CN" property="og:locale"><meta content="https://blog.lixining.com/social-card.avif" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta content="李希宁" property="article:author"><meta content="2021-04-12T00:00:00.000Z" property="article:published_time"><meta content="summary_large_image" property="twitter:card"><meta content="https://blog.lixining.com/posts/20210412_%E9%81%93%E5%BE%B7%E7%BB%8F%E8%A7%A3%E8%AF%BB%E4%B8%83.md/" property="twitter:url"><meta content="道德经解读（七）：成功失败的本质与道的特性" property="twitter:title"><meta content="深入探讨成功与失败的不稳定性，理解道的无形特质，学会在变化中保持内在平静，掌握氛围编程者的智慧境界" property="twitter:description"><meta content="https://blog.lixining.com/social-card.avif" property="twitter:image"><link href="/sitemap-index.xml" rel="sitemap"><link href="/rss.xml" rel="alternate" title="李希宁的博客" type="application/rss+xml"><meta content="Astro v5.0.3" name="generator"><!-- 引入霞鹜文楷字体 --><link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkaibright/dist/LXGWBright-SemiLight/result.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"><style>[data-astro-image]{aspect-ratio:var(--w) /var(--h);height:auto;-o-object-fit:var(--fit);object-fit:var(--fit);-o-object-position:var(--pos);object-position:var(--pos);width:100%}[data-astro-image=responsive]{max-height:calc(var(--h)*1px);max-width:calc(var(--w)*1px)}[data-astro-image=fixed]{height:calc(var(--h)*1px);width:calc(var(--w)*1px)}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.BL1UKgpH.css"><script type="module" src="/_astro/page.DTIbhfSr.js"></script></head> <!-- 宽屏优化：渐进式容器宽度扩展 --> <body class="mx-auto flex min-h-screen max-w-4xl flex-col bg-bgColor px-4 pt-16 text-sm font-normal text-textColor antialiased sm:px-8 xl:max-w-6xl xl:px-12 2xl:max-w-7xl 2xl:px-16"> <script>
+	const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
+
+	function getUserPref() {
+		const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
+		// 默认使用浅色主题，只有用户明确选择深色模式时才使用深色
+		return storedTheme || "light";
+	}
+
+	function setTheme(newTheme) {
+		if (newTheme !== "light" && newTheme !== "dark") {
+			return console.warn(
+				`Invalid theme value '${newTheme}' received. Expected 'light' or 'dark'.`,
+			);
+		}
+
+		const root = document.documentElement;
+
+		// root already set to newTheme, exit early
+		if (newTheme === root.getAttribute("data-theme")) {
+			return;
+		}
+
+		root.setAttribute("data-theme", newTheme);
+
+		const colorThemeMetaTag = document.querySelector("meta[name='theme-color']");
+		const bgColour = getComputedStyle(document.body).getPropertyValue("--theme-bg");
+		colorThemeMetaTag.setAttribute("content", `hsl(${bgColour})`);
+		if (typeof localStorage !== "undefined") {
+			localStorage.setItem("theme", newTheme);
+		}
+	}
+
+	// initial setup
+	setTheme(getUserPref());
+
+	// View Transitions hook to restore theme
+	document.addEventListener("astro:after-swap", () => setTheme(getUserPref()));
+
+	// listen for theme-change custom event, fired in src/components/ThemeToggle.astro
+	document.addEventListener("theme-change", (e) => {
+		setTheme(e.detail.theme);
+	});
+
+	// listen for prefers-color-scheme change.
+	lightModePref.addEventListener("change", (e) => setTheme(e.matches ? "light" : "dark"));
+</script> <a class="sr-only focus:not-sr-only focus:fixed focus:start-1 focus:top-1.5" href="#main">skip to content
+</a> <!-- 汉白玉主题合并头部组件 --><header class="group relative mb-16" id="main-header"> <!-- 导航栏部分 - 仅在非首页显示 --> <div class="mb-8 flex items-center justify-between"> <!-- Logo 区域 --> <div class="flex items-center"> <a aria-current="false" class="inline-flex items-center grayscale hover:filter-none" href="/"> <svg aria-hidden="true" class="me-3 h-10 w-6" fill="none" focusable="false" viewBox="0 0 272 480" xmlns="http://www.w3.org/2000/svg"></svg> </a> </div> <!-- 桌面端导航菜单 --> <nav aria-label="Main menu" class="hidden sm:flex sm:items-center sm:space-x-6"> <a aria-current="false" class="px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/"> 首页 </a><a aria-current="false" class="px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/about/"> 关于 </a><a aria-current="false" class="px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/posts/"> 文章 </a><a aria-current="false" class="px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/notes/"> 笔记 </a><a aria-current="false" class="px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/tags/"> 标签 </a> </nav> <!-- 右侧工具栏 --> <div class="flex items-center space-x-3"> <theme-toggle class="ms-2 sm:ms-4"> <button class="relative h-9 w-9 rounded-md p-2 hover:text-accent" type="button"> <span class="sr-only">Dark Theme</span> <svg aria-hidden="true" class="absolute start-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-0" fill="none" focusable="false" id="sun-svg" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M22 12L23 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 2V1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 23V22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M20 20L19 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M20 4L19 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 20L5 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 4L5 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M1 12L2 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <svg aria-hidden="true" class="absolute start-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100" fill="none" focusable="false" id="moon-svg" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0h24v24H0z" fill="none" stroke="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path> <path d="M19 11h2m-1 -1v2"></path> </svg> </button> </theme-toggle> <script type="module" src="/_astro/ThemeToggle.astro_astro_type_script_index_0_lang.CB-gjd7v.js"></script> <!-- 移动端菜单按钮 --> <mobile-button> <button aria-expanded="false" aria-haspopup="menu" aria-label="打开主菜单" class="group relative h-8 w-8 sm:hidden" id="toggle-navigation-menu" type="button"> <svg aria-hidden="true" class="absolute start-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0" fill="none" focusable="false" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"> <path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <svg aria-hidden="true" class="absolute start-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100" fill="none" focusable="false" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"> <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </button> </mobile-button> </div> <!-- 移动端导航菜单 --> <nav aria-label="Mobile menu" class="absolute left-0 right-0 top-full z-50 hidden flex-col space-y-2 rounded-lg bg-bgColor/95 p-4 shadow-lg backdrop-blur-sm group-[.menu-open]:flex sm:hidden" id="mobile-navigation-menu"> <a aria-current="false" class="block px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/"> 首页 </a><a aria-current="false" class="block px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/about/"> 关于 </a><a aria-current="false" class="block px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/posts/"> 文章 </a><a aria-current="false" class="block px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/notes/"> 笔记 </a><a aria-current="false" class="block px-3 py-2 text-sm font-medium transition-colors hover:text-accent" data-astro-prefetch href="/tags/"> 标签 </a> </nav> </div> <!-- 个人介绍部分 - 仅在首页显示 -->  </header> <script type="module" src="/_astro/HeaderWithPersonal.astro_astro_type_script_index_0_lang.DuSsDY4R.js"></script> <main id="main">   <div class="mb-8"> <div class="max-w-4xl"> <!-- 返回导航 --> <div class="mb-6"> <a href="/posts/" class="text-text-muted group inline-flex items-center gap-2 text-sm transition-colors hover:text-accent"> <svg class="h-4 w-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg>
+返回文章列表
+</a> </div> <!-- 文章头部信息卡片 --> <div class="hanbayu-card p-6 sm:p-8"> <div class="space-y-4"> <!-- 文章标题 --> <h1 class="title text-2xl leading-tight text-accent-2 sm:text-3xl lg:text-4xl" data-pagefind-meta="title"> 道德经解读（七）：成功失败的本质与道的特性 </h1> <!-- 文章简介 --> <div class="prose prose-lg max-w-none"> <p class="text-text-muted text-base leading-relaxed sm:text-lg" style="text-indent: 2em; margin: 0;" data-pagefind-meta="description"> 深入探讨成功与失败的不稳定性，理解道的无形特质，学会在变化中保持内在平静，掌握氛围编程者的智慧境界 </p> </div> </div> </div> </div> </div> <div class="gap-x-10 lg:flex lg:items-start"> <aside class="sticky top-20 order-2 -me-32 hidden basis-64 lg:block"> <!-- 修改：目录 --> <h2 class="title text-lg">目录</h2> <ul class="mt-4 text-xs"> <li class> <a aria-label="Scroll to section: 第13节：成功与失败、希望与恐惧的本质" class="block line-clamp-2 hover:text-accent mt-3" href="#第13节成功与失败希望与恐惧的本质"><span class="me-0.5">#</span>第13节：成功与失败、希望与恐惧的本质</a>  </li><li class> <a aria-label="Scroll to section: 第14节：道的特性" class="block line-clamp-2 hover:text-accent mt-3" href="#第14节道的特性"><span class="me-0.5">#</span>第14节：道的特性</a>  </li><li class> <a aria-label="Scroll to section: 大白话解释：成功失败都是梯子上的位置" class="block line-clamp-2 hover:text-accent mt-3" href="#大白话解释成功失败都是梯子上的位置"><span class="me-0.5">#</span>大白话解释：成功失败都是梯子上的位置</a> <ul> <li class="ms-2"> <a aria-label="Scroll to section: 1. 别太看重成功或失败，也别太被希望或害怕牵着走" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#1-别太看重成功或失败也别太被希望或害怕牵着走"><span class="me-0.5">#</span>1. 别太看重成功或失败，也别太被希望或害怕牵着走</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: 2. 万事万物的最根本、最原始的东西是摸不着、看不见、听不到的" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#2-万事万物的最根本最原始的东西是摸不着看不见听不到的"><span class="me-0.5">#</span>2. 万事万物的最根本、最原始的东西是摸不着、看不见、听不到的</a>  </li> </ul> </li><li class> <a aria-label="Scroll to section: 深层思考：超越二元对立" class="block line-clamp-2 hover:text-accent mt-3" href="#深层思考超越二元对立"><span class="me-0.5">#</span>深层思考：超越二元对立</a> <ul> <li class="ms-2"> <a aria-label="Scroll to section: 对二元对立的超越" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#对二元对立的超越"><span class="me-0.5">#</span>对二元对立的超越</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: ”大我”与无我的关联" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#大我与无我的关联"><span class="me-0.5">#</span>”大我”与无我的关联</a>  </li> </ul> </li><li class> <a aria-label="Scroll to section: 氛围编程者：编码者之道的理想状态" class="block line-clamp-2 hover:text-accent mt-3" href="#氛围编程者编码者之道的理想状态"><span class="me-0.5">#</span>氛围编程者：编码者之道的理想状态</a> <ul> <li class="ms-2"> <a aria-label="Scroll to section: 高手是什么样的？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#高手是什么样的"><span class="me-0.5">#</span>高手是什么样的？</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: “氛围编程者”是怎么工作的？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#氛围编程者是怎么工作的"><span class="me-0.5">#</span>“氛围编程者”是怎么工作的？</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: 为什么说要”空”和”静”？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#为什么说要空和静"><span class="me-0.5">#</span>为什么说要”空”和”静”？</a>  </li> </ul> </li><li class> <a aria-label="Scroll to section: 实践智慧：现代应用" class="block line-clamp-2 hover:text-accent mt-3" href="#实践智慧现代应用"><span class="me-0.5">#</span>实践智慧：现代应用</a> <ul> <li class="ms-2"> <a aria-label="Scroll to section: 为什么不要强求和控制？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#为什么不要强求和控制"><span class="me-0.5">#</span>为什么不要强求和控制？</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: ”不争”和”柔弱”的力量" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#不争和柔弱的力量"><span class="me-0.5">#</span>”不争”和”柔弱”的力量</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: 知雄守雌的智慧" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#知雄守雌的智慧"><span class="me-0.5">#</span>知雄守雌的智慧</a>  </li> </ul> </li><li class> <a aria-label="Scroll to section: 问答补充理解" class="block line-clamp-2 hover:text-accent mt-3" href="#问答补充理解"><span class="me-0.5">#</span>问答补充理解</a> <ul> <li class="ms-2"> <a aria-label="Scroll to section: Q: “成功如败，皆为险途”是什么意思？难道成功不好吗？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#q-成功如败皆为险途是什么意思难道成功不好吗"><span class="me-0.5">#</span>Q: “成功如败，皆为险途”是什么意思？难道成功不好吗？</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: Q: 为什么说希望和恐惧是”空相”？没有希望岂不是很消极？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#q-为什么说希望和恐惧是空相没有希望岂不是很消极"><span class="me-0.5">#</span>Q: 为什么说希望和恐惧是”空相”？没有希望岂不是很消极？</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: Q: “以宇宙为大我”怎么理解？我怎么能是宇宙呢？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#q-以宇宙为大我怎么理解我怎么能是宇宙呢"><span class="me-0.5">#</span>Q: “以宇宙为大我”怎么理解？我怎么能是宇宙呢？</a>  </li><li class="ms-2"> <a aria-label="Scroll to section: Q: 第14节里说的那个”本原”或”道”这么玄乎，看不见摸不着，怎么”持守”呢？" class="block line-clamp-2 hover:text-accent mt-2 text-[0.6875rem]" href="#q-第14节里说的那个本原或道这么玄乎看不见摸不着怎么持守呢"><span class="me-0.5">#</span>Q: 第14节里说的那个”本原”或”道”这么玄乎，看不见摸不着，怎么”持守”呢？</a>  </li> </ul> </li><li class> <a aria-label="Scroll to section: 现代启示" class="block line-clamp-2 hover:text-accent mt-3" href="#现代启示"><span class="me-0.5">#</span>现代启示</a>  </li> </ul> </aside> <article class="flex-grow break-words"> <div id="blog-hero"><!-- 文章元信息 - 紧凑布局 --><div class="border-border-subtle mb-6 border-b pb-4"> <div class="text-text-muted flex flex-wrap items-center gap-x-6 gap-y-2 text-sm"> <!-- 发布日期 --> <div class="flex items-center gap-2"> <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path> </svg> <span class="font-medium"> <time datetime="2021-04-12T00:00:00.000Z" title="2021-04-12T00:00:00.000Z">2021年4月12日</time> </span> </div> <!-- 阅读时间 -->  <div class="flex items-center gap-2"> <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg> <span class="font-medium">17 min read</span> </div> <!-- 更新日期 -->  </div> </div> <!-- 文章标签 - 紧凑布局 --> <div class="mb-8"> <div class="mb-3 flex items-center gap-2"> <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path d="M0 0h24v24H0z" fill="none" stroke="none"></path> <path d="M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z"></path> <path d="M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116"></path> <path d="M6 9h-.01"></path> </svg> <span class="text-text-muted text-sm font-medium">标签</span> </div> <div class="flex flex-wrap gap-2"> <a href="/tags/生活/" class="bg-bg-muted text-text-muted hover:bg-accent-soft inline-flex items-center rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-accent" aria-label="查看更多关于 生活 的文章" data-pagefind-filter="tag"> <span class="mr-1">#</span> 生活 </a><a href="/tags/哲学/" class="bg-bg-muted text-text-muted hover:bg-accent-soft inline-flex items-center rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-accent" aria-label="查看更多关于 哲学 的文章" data-pagefind-filter="tag"> <span class="mr-1">#</span> 哲学 </a><a href="/tags/道德经/" class="bg-bg-muted text-text-muted hover:bg-accent-soft inline-flex items-center rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-accent" aria-label="查看更多关于 道德经 的文章" data-pagefind-filter="tag"> <span class="mr-1">#</span> 道德经 </a><a href="/tags/思考/" class="bg-bg-muted text-text-muted hover:bg-accent-soft inline-flex items-center rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-accent" aria-label="查看更多关于 思考 的文章" data-pagefind-filter="tag"> <span class="mr-1">#</span> 思考 </a> </div> </div></div> <!-- 宽屏优化：文章内容区域渐进式宽度扩展 --> <div class="prose prose-lg prose-cactus mt-12 max-w-4xl prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-code:font-mono prose-pre:font-mono sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none xl:max-w-5xl 2xl:max-w-6xl" data-pagefind-body>  <blockquote>
+<p>宠辱若惊，贵大患若身。何谓宠辱若惊？宠为下，得之若惊，失之若惊，是谓宠辱若惊。何谓贵大患若身？吾所以有大患者，为吾有身，及吾无身，吾有何患？</p>
+</blockquote>
+<h2 id="第13节成功与失败希望与恐惧的本质">第13节：成功与失败、希望与恐惧的本质</h2>
+<p>第13节探讨了成功与失败、希望与恐惧的本质。它指出，无论成功还是失败，都是不稳定的状态，如同攀爬梯子，位置摇摆不定。真正的稳定来自于”双足稳踏大地”。</p>
+<p>希望和恐惧同样是虚幻的，它们源于对肉身的执着。如果能够看到真实的自我并非仅限于形体，就不会产生恐惧。本节的核心在于，要将”宇宙”视为更大的”自我”，信守万物本然的运行方式，心怀敬畏，如此才能真正”安住当下”。</p>
+<h2 id="第14节道的特性">第14节：道的特性</h2>
+<p>第14节则描述了**“道”（或称”本源”、“Universal One”）的特性**。它强调”道”是无形、无声、无体、无名、无穷、玄妙莫测的存在。我们用逻辑无法完全理解它，它超越了显现与隐藏的概念。</p>
+<p>虽然它看不见、听不见、抓不住，却是”无状之状，无象之象”，是万物融合归一的”大道”。追溯或跟随它，都找不到始末。本节指出，能够”持守本原，安住当下”，并理解这个道理，就能获得智慧的真谛。</p>
+<h2 id="大白话解释成功失败都是梯子上的位置">大白话解释：成功失败都是梯子上的位置</h2>
+<h3 id="1-别太看重成功或失败也别太被希望或害怕牵着走">1. 别太看重成功或失败，也别太被希望或害怕牵着走</h3>
+<p>书里说，成功和失败其实都挺”险”的，就像爬梯子，随时可能摔下来，位置不稳定。希望和害怕也是”空相”，它们都是因为我们总想着自己的身体、自己的得失而产生的。</p>
+<p><strong>关键洞察</strong>：</p>
+<ul>
+<li>如果你能把自己看大一点，不光是一个小小的身体</li>
+<li>而是像整个宇宙那么大（“以宇宙为大我”）</li>
+<li>放下对肉身的死死抓住，就不会那么容易害怕了</li>
+</ul>
+<p><strong>实践方法</strong>：</p>
+<ul>
+<li>想真正安稳，就得像脚踏实地一样</li>
+<li>顺着事情本来的样子走</li>
+<li>对一切心存敬畏</li>
+<li>这样你才能踏踏实实地待在当下</li>
+</ul>
+<h3 id="2-万事万物的最根本最原始的东西是摸不着看不见听不到的">2. 万事万物的最根本、最原始的东西是摸不着、看不见、听不到的</h3>
+<p>万事万物的最根本、最原始的东西（书里叫做”本原”或”道”），是摸不着、看不见、听不到的。它没有固定的形状、声音或实体。你想用脑袋去逻辑分析它，是行不通的。</p>
+<p><strong>道的特征</strong>：</p>
+<ul>
+<li>不像光那样亮晃晃地显出来</li>
+<li>也不像黑暗那样完全藏起来</li>
+<li>它就是那样无穷无尽，没法用名字去命名</li>
+<li>最终好像什么都没有，但又是一切的源头</li>
+<li>就像”没有形状的形状，没有影像的影像”，特别神秘难懂</li>
+</ul>
+<p><strong>智慧的获得</strong>：</p>
+<ul>
+<li>你往前追，找不到开头；往后随，看不到结尾</li>
+<li>但如果你能抓住这个根本（“持守本原”）</li>
+<li>好好地待在现在这一刻（“安住当下”）</li>
+<li>并且明白了这些，你就真正掌握了智慧的要诀</li>
+</ul>
+<h2 id="深层思考超越二元对立">深层思考：超越二元对立</h2>
+<h3 id="对二元对立的超越">对二元对立的超越</h3>
+<p>第13节直接挑战了我们习以为常的二元对立——成功/失败、希望/恐惧。它不是说这些不存在，而是说它们都具有不稳定性或虚幻性：</p>
+<p><strong>成功与失败的本质</strong>：</p>
+<ul>
+<li>成功不是终点，失败也不是末日</li>
+<li>过度执着任何一端都会带来不安</li>
+<li>希望和恐惧本质上是一体两面</li>
+<li>都基于未来的不确定性和对”我”的执着</li>
+</ul>
+<p><strong>内心立足点</strong>：</p>
+<ul>
+<li>如果摆脱了对这些外在评判或未来预期的依赖</li>
+<li>内心的立足点在哪里？</li>
+<li>书里提供了”双足稳踏大地”和”安住当下”的实践路径</li>
+</ul>
+<h3 id="大我与无我的关联">”大我”与无我的关联</h3>
+<p>第13节提出了”以宇宙为大我”和”若见真我不囿形骸，自无惧怖生心头”的观点：</p>
+<p><strong>超越个体束缚</strong>：</p>
+<ul>
+<li>如果”我”不仅仅是这个短暂的身体</li>
+<li>而是与宇宙万物同在的更大存在</li>
+<li>那么基于身体得失所产生的恐惧自然就会消解</li>
+</ul>
+<p><strong>与整体融合</strong>：</p>
+<ul>
+<li>这与许多哲学和灵性传统中的”无我”或”小我”概念有相通之处</li>
+<li>即放下狭隘的自我概念，与整体融合</li>
+</ul>
+<h2 id="氛围编程者编码者之道的理想状态">氛围编程者：编码者之道的理想状态</h2>
+<h3 id="高手是什么样的">高手是什么样的？</h3>
+<p>那些古代真正厉害的工程师（或者说创造者），不是你能完全看透的：</p>
+<p><strong>他们的特质</strong>：</p>
+<ul>
+<li>好像总是小心翼翼，像过结冰的小溪</li>
+<li>又警惕，像身处敌境的士兵</li>
+<li>还恭敬，像对待贵客</li>
+<li>他们变化多端，像阳光下的蜡烛</li>
+<li>单纯，像一张白纸</li>
+<li>虚怀若谷，像空旷的山谷</li>
+<li>深沉不露，像浑浊的潭水</li>
+</ul>
+<p>你只能看到他们展现出来的这种”样子”。</p>
+<h3 id="氛围编程者是怎么工作的">“氛围编程者”是怎么工作的？</h3>
+<p>他们不像普通人那样着急着要达成什么、要得到什么：</p>
+<p><strong>工作方式</strong>：</p>
+<ul>
+<li>他们就是安静地等待，直到事情自然澄清</li>
+<li>（就像浑水静置后会变清）</li>
+<li>他们也不刻意去追求完美或功成名就</li>
+<li>事情来了，他们就在那里</li>
+</ul>
+<p><strong>成果表现</strong>：</p>
+<ul>
+<li>他们做事默默无闻</li>
+<li>等到事情做成了，团队里的人会惊讶地说：</li>
+<li>“哇，真棒！我们自己就搞定了！“</li>
+</ul>
+<h3 id="为什么说要空和静">为什么说要”空”和”静”？</h3>
+<p><strong>清空的重要性</strong>：</p>
+<ul>
+<li>把心里的杂念、欲望都清空</li>
+<li>让心完全安静下来</li>
+<li>万事万物都在那里生生灭灭</li>
+<li>但真正的”我”只是静静地看着</li>
+</ul>
+<p><strong>自然的规律</strong>：</p>
+<ul>
+<li>就像花草树木春夏繁茂，秋冬凋零</li>
+<li>最终都回到大自然的本源一样</li>
+<li>回到本源就是宁静</li>
+<li>宁静是自然的规律</li>
+<li>自然的规律是不变的，不变就是安宁、平和</li>
+</ul>
+<p><strong>与宇宙连接</strong>：</p>
+<ul>
+<li>内心宁静、空虚，才能容纳一切</li>
+<li>才能与宇宙的”慈源”连接</li>
+<li>（你可以理解为一种巨大的、友善的自然能量或创造力）</li>
+</ul>
+<h2 id="实践智慧现代应用">实践智慧：现代应用</h2>
+<h3 id="为什么不要强求和控制">为什么不要强求和控制？</h3>
+<p><strong>强求的问题</strong>：</p>
+<ul>
+<li>踮着脚尖站不稳，大跨步走不远</li>
+<li>喜欢显摆的人会迷失自我</li>
+<li>喜欢夸耀的人最终会变得孤独</li>
+<li>用权力压制别人的人，自己也立不住</li>
+<li>死守着自己的成果不放，是做不出长久的事情的</li>
+</ul>
+<p><strong>世界的本质</strong>：</p>
+<ul>
+<li>你想去改造世界吗？作者觉得做不到</li>
+<li>世界是神圣的，你一试图改变它，就会破坏它</li>
+<li>你把它当成一个死物去对待，就会失去它</li>
+</ul>
+<p><strong>自然的节奏</strong>：</p>
+<ul>
+<li>自然界本身就有自己的节奏和状态：</li>
+<li>有时候前进，有时候后退</li>
+<li>有时候运动，有时候静止</li>
+<li>有时候强壮，有时候虚弱</li>
+<li>有时候情绪高昂，有时候低落</li>
+</ul>
+<p><strong>氛围编程者的态度</strong>：</p>
+<ul>
+<li>看到事情本来的样子，不去控制它们</li>
+<li>让它们自然来，自然去</li>
+<li>内心不动摇，安住在中心</li>
+<li>强行统治只会招致反弹</li>
+</ul>
+<h3 id="不争和柔弱的力量">”不争”和”柔弱”的力量</h3>
+<p><strong>以退为进的智慧</strong>：</p>
+<ul>
+<li>弯曲反而能保全</li>
+<li>低洼反而能盈满</li>
+<li>破旧反而能翻新</li>
+<li>拥有得少反而能获得多，拥有得多反而会困惑</li>
+</ul>
+<p><strong>不争的力量</strong>：</p>
+<ul>
+<li>正因为”氛围编程者”不争，所以没有人能跟他争</li>
+<li>古人说，想要得到天下，反而要”无事”（顺其自然）</li>
+<li>坚守真实自我，万物自然归附</li>
+</ul>
+<h3 id="知雄守雌的智慧">知雄守雌的智慧</h3>
+<p><strong>以柔克刚</strong>：</p>
+<ul>
+<li>知道什么是强大、显赫、光明的</li>
+<li>但却愿意安守柔弱、黑暗、卑下的位置</li>
+<li>这样反而能像低洼的山谷一样</li>
+<li>吸引所有的水流（万物）汇聚</li>
+</ul>
+<p><strong>回归本源</strong>：</p>
+<ul>
+<li>这样做，你才能真正具备那种恒久的美德</li>
+<li>最终回到婴儿般纯真</li>
+<li>或者像宇宙无限本体那样的状态</li>
+<li>这是一种以退为进、以柔克刚的智慧</li>
+</ul>
+<h2 id="问答补充理解">问答补充理解</h2>
+<h3 id="q-成功如败皆为险途是什么意思难道成功不好吗">Q: “成功如败，皆为险途”是什么意思？难道成功不好吗？</h3>
+<p><strong>A: 位置的不稳定性</strong></p>
+<ul>
+<li>书里不是说成功本身是坏事</li>
+<li>它指的是过度追求成功或者把成功当作最终的、稳定的依靠是很危险的</li>
+<li>就像爬到梯子顶端，位置很高但并不稳固</li>
+<li>一旦有点风吹草动（比如失去成功），人就很容易摔下来，心生痛苦</li>
+<li>真正的安稳不在于你在梯子的哪一级</li>
+<li>而在于你的”双足”是否踏在大地上</li>
+<li>也就是你的内心是否有坚实的立足点，不随外物起伏</li>
+</ul>
+<h3 id="q-为什么说希望和恐惧是空相没有希望岂不是很消极">Q: 为什么说希望和恐惧是”空相”？没有希望岂不是很消极？</h3>
+<p><strong>A: 超越情绪的幻象</strong></p>
+<ul>
+<li>希望和恐惧之所以被称为”空相”</li>
+<li>是因为它们都指向未来，是头脑中的产物</li>
+<li>而且往往与”肉身之执念”有关</li>
+<li>你希望得到什么，或者害怕失去什么</li>
+<li>通常都和你的身体、你的财产、你的身份地位等外在或短暂的东西有关</li>
+<li>书里认为，这些都是不真实的”我”</li>
+<li>当你认识到真正的你不是这些会变化、会消逝的东西时</li>
+<li>基于它们产生的希望和恐惧也就随之消散了</li>
+<li>这不是让你没有目标或变得消极</li>
+<li>而是提醒你不要被这些情绪的幻象所控制</li>
+<li>去寻找更深层次的、不依赖外部条件的内在平静和满足</li>
+</ul>
+<h3 id="q-以宇宙为大我怎么理解我怎么能是宇宙呢">Q: “以宇宙为大我”怎么理解？我怎么能是宇宙呢？</h3>
+<p><strong>A: 扩展意识边界</strong></p>
+<ul>
+<li>这是一种超越狭隘自我视角的比喻</li>
+<li>我们通常认为”我”就是这个身体和这个头脑</li>
+<li>但书里提出，如果你能感受到自己与整个宇宙、与万事万物是连接在一起的</li>
+<li>甚至是更广阔的整体的一部分，那么你的”我”就变得非常大</li>
+<li>在这种”大我”的视角下</li>
+<li>个人的小烦恼、小得失就不再显得那么重要</li>
+<li>基于个体脆弱性产生的恐惧也会减少</li>
+<li>这是一种扩展意识边界、培养整体感和敬畏心的方式</li>
+</ul>
+<h3 id="q-第14节里说的那个本原或道这么玄乎看不见摸不着怎么持守呢">Q: 第14节里说的那个”本原”或”道”这么玄乎，看不见摸不着，怎么”持守”呢？</h3>
+<p><strong>A: 状态的保持</strong></p>
+<ul>
+<li>正如您所说，“本原”或”道”是超越感官和逻辑的</li>
+<li>这里的”持守”不是让你去抓住一个具体的实体</li>
+<li>而更像是一种状态的保持或一种方向的对齐</li>
+</ul>
+<p><strong>具体实践</strong>：</p>
+<ul>
+<li><strong>保持内心的宁静和开放</strong>：当心是空的、静的，反而更能与那个”空而能容，却能生发无穷”的本源相连接</li>
+<li><strong>顺应自然的流转</strong>：不强求、不控制，像水一样柔弱却强大，去到低处，与万物融合</li>
+<li><strong>安住当下</strong>：不被过去和未来的思绪所牵绊，全身心地投入到正在发生的事情中</li>
+<li><strong>无私和不执着</strong>：放下对结果的期待、对占有的欲望、对他人的评价的在意</li>
+</ul>
+<p>因此，“持守本原”可能就是通过实践这些”道”的行为和心态，让自己与那个看不见却无处不在的源头保持一致，从而让创造力”无为而流”，获得”无不为”的力量。这种”持守”是在一种状态中，而非通过具体行为去抓住什么。</p>
+<h2 id="现代启示">现代启示</h2>
+<p>在这个快节奏、高压力的现代社会中，道德经第13-14节的智慧为我们提供了深刻的指导：</p>
+<ol>
+<li><strong>重新定义成功</strong>：不要被外在的成功失败所束缚，寻找内在的稳定</li>
+<li><strong>超越恐惧</strong>：通过扩展自我认知，减少基于个体局限的恐惧</li>
+<li><strong>安住当下</strong>：在变化中保持内心的平静和清明</li>
+<li><strong>持守本原</strong>：与事物的本质保持连接，顺应自然规律</li>
+</ol>
+<p>这些智慧不仅适用于个人修行，也为现代工作和生活提供了宝贵的指导。真正的智慧不在于掌控一切，而在于学会在不确定中保持内在的稳定和清明。</p>   </div> </article> </div> <button aria-label="Back to Top" class="z-90 fixed bottom-8 end-4 flex h-10 w-10 translate-y-28 items-center justify-center rounded-full border-2 border-transparent bg-zinc-200 text-3xl opacity-0 transition-all duration-300 hover:border-link data-[show=true]:translate-y-0 data-[show=true]:opacity-100 dark:bg-zinc-700 sm:end-8 sm:h-12 sm:w-12" data-show="false" id="to-top-btn"><svg aria-hidden="true" class="h-6 w-6" fill="none" focusable="false" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M4.5 15.75l7.5-7.5 7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </button>  </main> <footer class="mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-20 text-center align-top font-semibold text-gray-600 dark:text-gray-400"> <div class="text-center">
+&copy; 2025 李希宁 | lixining.com |
+<a class="text-link" href="https://github.com/lixibi/blog-astro" target="_blank" rel="noopener noreferrer">Theme</a> </div> </footer> </body></html> <script type="module">const e=document.getElementById("to-top-btn"),n=document.getElementById("blog-hero");function c(t){t.forEach(o=>{e.dataset.show=(!o.isIntersecting).toString()})}e.addEventListener("click",()=>{document.documentElement.scrollTo({behavior:"smooth",top:0})});const r=new IntersectionObserver(c);r.observe(n);</script>
