@@ -10,7 +10,8 @@ import RecommendationSection from "@/components/RecommendationSection.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/HomePage.astro";
 import { collectionDateSort } from "@/utils/date";
-export const prerender = true;
+// 临时禁用预渲染确保内容实时更新
+// export const prerender = true;
 
 // Posts
 const MAX_POSTS = 6;
