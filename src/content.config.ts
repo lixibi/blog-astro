@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
 
 function removeDupsAndLowerCase(array: string[]) {
 	return [...new Set(array.map((str) => str.toLowerCase()))];
@@ -10,7 +9,7 @@ const baseSchema = z.object({
 });
 
 const post = defineCollection({
-	loader: glob({ base: "./src/content/post", pattern: "**/*.{md,mdx}" }),
+	type: 'content',
 	schema: ({ image }) =>
 		baseSchema.extend({
 			description: z.string(),
@@ -23,7 +22,7 @@ const post = defineCollection({
 			draft: z.boolean().default(false),
 			ogImage: z.string().optional(),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
-			// 文章分类字段 - 保留用于向后兼容，推荐使用tags
+			// 文章分类字段 - 保留用于向后兼容，推���使用tags
 			category: z.enum(["技术类", "生活类", "学习类", "游戏类"]).optional(),
 			publishDate: z
 				.string()
@@ -37,7 +36,7 @@ const post = defineCollection({
 });
 
 const note = defineCollection({
-	loader: glob({ base: "./src/content/note", pattern: "**/*.{md,mdx}" }),
+	type: 'content',
 	schema: baseSchema.extend({
 		description: z.string().optional(),
 		publishDate: z
@@ -68,7 +67,7 @@ const note = defineCollection({
 
 // 书影推荐集合
 const recommendation = defineCollection({
-	loader: glob({ base: "./src/content/recommendation", pattern: "**/*.{md,mdx}" }),
+	type: 'content',
 	schema: ({ image }) =>
 		baseSchema.extend({
 			description: z.string(),
