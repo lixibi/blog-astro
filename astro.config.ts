@@ -9,7 +9,6 @@ import webmanifest from "astro-webmanifest";
 import { defineConfig, envField } from "astro/config";
 import { expressiveCodeOptions } from "./src/site.config";
 import { siteConfig } from "./src/site.config";
-import vercel from "@astrojs/vercel";
 
 // 自定义插件
 import { imageProcessor } from "./src/plugins/image-processor";
@@ -31,7 +30,6 @@ import rehypeKatex from "rehype-katex"; // Render LaTeX with KaTeX
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: vercel(),
     image: {
         domains: ["webmention.io"],
     },
