@@ -2,7 +2,6 @@ import fs from "node:fs";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
@@ -31,7 +30,6 @@ import rehypeKatex from "rehype-katex"; // Render LaTeX with KaTeX
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: vercel(),
     image: {
         domains: ["webmention.io"],
     },

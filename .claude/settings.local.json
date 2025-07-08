@@ -25,7 +25,16 @@
       "Bash(mv:*)",
       "Bash(node:*)",
       "Bash(rg:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(claude code --status)",
+      "Bash(claude mcp:*)",
+      "Bash(claude:*)",
+      "Bash(npx:*)",
+      "Bash(TAVILY_API_KEY='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' npx -y tavily-mcp@0.1.4)",
+      "Bash(pnpm run:*)",
+      "Bash(pnpm preview:*)"
     ],
     "deny": []
   }
